@@ -12,8 +12,8 @@ export default function About({ profile }) {
   const stats = [
     { value: '5', label: 'Outils SAST', icon: '🔍' },
     { value: '6', label: 'Outils DAST', icon: '🕷️' },
-    { value: '3', label: 'Types DAST', icon: '🎯' },
-    { value: '40+', label: 'Outils total', icon: '🛠️' },
+    { value: '3', label: 'Types de DAST', icon: '🎯' },
+    { value: '40+', label: 'Total d\'outils', icon: '🛠️' },
   ]
 
   return (
@@ -21,8 +21,8 @@ export default function About({ profile }) {
       <div className="container">
         <SectionHeader
           label="01 — À propos"
-          title={<>Qui suis-<span>je ?</span></>}
-          subtitle="Analyste SOC & passionné de cybersécurité — détection d'incidents, protection ransomware et posture Zero Trust."
+          title={<>À propos de <span>moi</span></>}
+          subtitle="Analyste SOC passionné de cybersécurité — détection d'incidents, protection contre les ransomwares et renforcement de la posture Zero Trust."
         />
 
         <div
@@ -31,8 +31,10 @@ export default function About({ profile }) {
         >
           <div className="about__main card">
             <div className="about__main-icon"><FiCode /></div>
-            <h3>Ma vision</h3>
-            <p>{profile.bio}</p>
+            <h3>Mon approche</h3>
+            <div className="about__bio-box">
+              <p>{profile.bio}</p>
+            </div>
             <div className="about__tool-groups">
               <div className="about__tool-group">
                 <span className="about__tool-label">Conteneurisation</span>

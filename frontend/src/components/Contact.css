@@ -73,7 +73,7 @@
 
 .contact__row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
 }
 
@@ -139,6 +139,11 @@
 
 .contact__submit {
   align-self: flex-start;
+  min-width: 160px;
+}
+
+@media (max-width: 600px) {
+  .contact__submit { width: 100%; align-self: stretch; }
 }
 
 .contact__submit:disabled {
