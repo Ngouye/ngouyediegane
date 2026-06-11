@@ -21,11 +21,14 @@ public class CybersecurityDataSeeder {
     public CommandLineRunner seedCybersecurityData() {
         return args -> {
             // Vérifier si les données existent déjà
-            if (expertiseRepository.count() > 0) {
-                return; // Les données sont déjà en base
+            if (expertiseRepository.count() > 0 || certificationRepository.count() > 0) {
+                System.out.println("ℹ️ Les données de cybersécurité existent déjà en base.");
+                return; 
             }
 
-            // Créer les expertises
+            // ==========================================
+            // 1. Créer les expertises
+            // ==========================================
             CybersecurityExpertise pentestWeb = CybersecurityExpertise.builder()
                     .title("Pentesting Web & API")
                     .category("PENTESTING")
@@ -125,12 +128,12 @@ public class CybersecurityDataSeeder {
             CybersecurityExpertise socOperations = CybersecurityExpertise.builder()
                     .title("SOC & SIEM")
                     .category("SOC")
-                    .description("Collecte de logs, corrélation d'événements, détection de menaces et réponse aux incidents.")
+                    .description("Collecte de logs, corrélation d'événements, détection de menaces et réponse aux incidents. Montée en compétences active sur les solutions SIEM/SOAR leaders du marché.")
                     .color("#818cf8")
                     .icon("🛡️")
                     .level(5)
                     .featured(true)
-                    .tools(Arrays.asList("Wazuh", "ELK", "SIEM", "FIM", "XDR"))
+                    .tools(Arrays.asList("Wazuh", "Splunk", "IBM QRadar SOAR", "ELK", "SIEM", "XDR"))
                     .skills(Arrays.asList("Surveillance", "Corrélation d'événements", "Réponse incidents"))
                     .build();
 
@@ -151,43 +154,9 @@ public class CybersecurityDataSeeder {
                     pentestWeb, pentestInfra, sast, dast, container, iac, secretDetection, threatAnalysis, socOperations, ransomwareProtection
             ));
 
-            // Créer les certifications
-            CybersecurityCertification oscp = CybersecurityCertification.builder()
-                    .name("OSCP")
-                    .issuer("Offensive Security")
-                    .credentialId("OSCP-12345")
-                    .credentialUrl("https://www.credly.com")
-                    .description("Certification pratique reconnue en pentesting")
-                    .issuedDate(LocalDate.of(2023, 6, 15))
-                    .expiryDate(LocalDate.of(2026, 6, 15))
-                    .icon("🏅")
-                    .active(true)
-                    .build();
-
-            CybersecurityCertification ceh = CybersecurityCertification.builder()
-                    .name("CEH")
-                    .issuer("EC-Council")
-                    .credentialId("CEH-67890")
-                    .credentialUrl("https://www.credly.com")
-                    .description("Certified Ethical Hacker")
-                    .issuedDate(LocalDate.of(2022, 12, 1))
-                    .expiryDate(LocalDate.of(2025, 12, 1))
-                    .icon("🎯")
-                    .active(true)
-                    .build();
-
-            CybersecurityCertification az900 = CybersecurityCertification.builder()
-                    .name("AZ-900")
-                    .issuer("Microsoft")
-                    .credentialId("AZ-900-11111")
-                    .credentialUrl("https://www.credly.com")
-                    .description("Azure Fundamentals")
-                    .issuedDate(LocalDate.of(2023, 3, 20))
-                    .expiryDate(null)
-                    .icon("☁️")
-                    .active(true)
-                    .build();
-
+            // ==========================================
+            // 2. Créer les certifications
+            // ==========================================
             CybersecurityCertification crpo = CybersecurityCertification.builder()
                     .name("CRPO")
                     .issuer("Certified Ransomware Protection Officer")
@@ -197,18 +166,6 @@ public class CybersecurityDataSeeder {
                     .issuedDate(LocalDate.of(2025, 4, 15))
                     .expiryDate(null)
                     .icon("🛡️")
-                    .active(true)
-                    .build();
-
-            CybersecurityCertification awsSec = CybersecurityCertification.builder()
-                    .name("AWS Security")
-                    .issuer("Amazon")
-                    .credentialId("AWS-22222")
-                    .credentialUrl("https://www.credly.com")
-                    .description("AWS Security Fundamentals")
-                    .issuedDate(LocalDate.of(2023, 1, 15))
-                    .expiryDate(null)
-                    .icon("☁️")
                     .active(true)
                     .build();
 
@@ -260,8 +217,8 @@ public class CybersecurityDataSeeder {
                     .active(true)
                     .build();
 
-            // Sauvegarder les certifications
-            certificationRepository.saveAll(Arrays.asList(oscp, ceh, az900, crpo, awsSec, cs50p, ebios, forcen, studentSoc));
+            // Sauvegarder uniquement les certifications déclarées
+            certificationRepository.saveAll(Arrays.asList(crpo, cs50p, ebios, forcen, studentSoc));
 
             System.out.println("✅ Données cybersécurité initialisées avec succès!");
         };

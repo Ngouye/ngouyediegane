@@ -37,7 +37,7 @@ public class DataSeeder implements CommandLineRunner {
 
         profileRepository.save(Profile.builder()
                 .fullName("NGOUYE DIEGANE GNING")
-                .title("Administrateur Système & Cloud | DevSecOps & AI")
+                .title("Analyste SOC | Administrateur Système & Cloud | DevSecOps & AI")
                 .email("gningngouye2001@gmail.com")
                 .phone("+221 77 952 77 84")
                 .location("Dakar, Sénégal")
@@ -100,7 +100,7 @@ public class DataSeeder implements CommandLineRunner {
                 Project.builder()
                         .title("Automatisation Cloud AWS avec Ansible")
                         .description("Gestion et administration d'une infrastructure cloud AWS via Ansible.")
-                        .longDescription("Playbooks Ansible pour provisionner et durcir des serveurs Linux sur AWS, " +
+                        .longDescription("Playbooks Ansible pour provisionner et durcis des serveurs Linux sur AWS, " +
                                 "installer des agents de supervision et automatiser des déploiements sécurisés. " +
                                 "Workflow avec pipelines CI/CD, hardening système et validation de configurations.")
                         .imageUrl("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600")
@@ -167,21 +167,6 @@ public class DataSeeder implements CommandLineRunner {
                                 "Automatisation IaC avec Terraform sur multi-environnements",
                                 "Intégration SAST, DAST et SCA dans les pipelines CI/CD",
                                 "Réduction du temps de déploiement de 45 min à 8 min"
-                        ))
-                        .build(),
-                Experience.builder()
-                        .company("Entreprise Tech — Stage DevOps")
-                        .role("DevOps Engineer")
-                        .location("Dakar, Sénégal")
-                        .description("Stage orienté automatisation : Jenkins, Ansible, Docker et premiers pas sur AWS.")
-                        .startDate(LocalDate.of(2023, 6, 1))
-                        .endDate(LocalDate.of(2023, 12, 1))
-                        .current(false)
-                        .achievements(List.of(
-                                "Création de playbooks Ansible pour 20+ serveurs",
-                                "Configuration de pipelines Jenkins multi-branches",
-                                "Containerisation d'applications legacy avec Docker",
-                                "Documentation des procédures de déploiement et rollback"
                         ))
                         .build()
         ));
@@ -298,7 +283,7 @@ public class DataSeeder implements CommandLineRunner {
                 Skill.builder().name("Bandit").category("SAST")
                         .description("Python — analyse simple & spécialisée sécurité").level(80).icon("🐍").build(),
 
-                // Sécurité IaC
+                // Securite IaC
                 Skill.builder().name("Checkov").category("Sécurité IaC")
                         .description("Terraform, K8s, Dockerfile, ARM — 1000+ règles, policies as code").level(88).icon("✅").build(),
                 Skill.builder().name("KICS").category("Sécurité IaC")
@@ -306,32 +291,32 @@ public class DataSeeder implements CommandLineRunner {
                 Skill.builder().name("tfsec").category("Sécurité IaC")
                         .description("Terraform — scan spécialisé, précis & rapide").level(84).icon("🏗️").build(),
 
-                // Sécurité Images Docker
+                // Securite Images Docker
                 Skill.builder().name("Dockle").category("Sécurité Images")
                         .description("Images Docker — bonnes pratiques & CIS Benchmarks").level(86).icon("🐳").build(),
 
-                // Détection Secrets
+                // Detection Secrets
                 Skill.builder().name("Gitleaks").category("Détection Secrets")
                         .description("Scan secrets Git — rapide, règles complètes & pre-commit hooks").level(90).icon("🔑").build(),
                 Skill.builder().name("TruffleHog").category("Détection Secrets")
                         .description("Détection secrets — vérification credentials actifs en ligne").level(85).icon("🐷").build(),
 
                 // DAST — Automatisés (spider + fuzzer)
-                Skill.builder().name("OWASP ZAP").category("DAST").subcategory("Spider + Fuzzer")
+                Skill.builder().name("OWASP ZAP").category("DAST — Spider + Fuzzer")
                         .description("Référence open source — spider, active scan, fuzzing, idéal CI/CD").level(88).icon("🕷️").build(),
-                Skill.builder().name("Burp Suite").category("DAST").subcategory("Spider + Fuzzer")
+                Skill.builder().name("Burp Suite").category("DAST — Spider + Fuzzer")
                         .description("Fonctionnalités avancées, fuzzer puissant — Community/Pro").level(85).icon("🎯").build(),
-                Skill.builder().name("Nikto").category("DAST").subcategory("Spider + Fuzzer")
+                Skill.builder().name("Nikto").category("DAST — Spider + Fuzzer")
                         .description("Simple, rapide — détection misconfigurations serveur web").level(78).icon("🔎").build(),
 
                 // DAST — Basés sur templates
-                Skill.builder().name("Nuclei").category("DAST").subcategory("Templates")
+                Skill.builder().name("Nuclei").category("DAST — Templates")
                         .description("Ultra-rapide — 11 000+ templates communautaires, CVE connues").level(90).icon("⚡").build(),
-                Skill.builder().name("Nmap + NSE").category("DAST").subcategory("Templates")
+                Skill.builder().name("Nmap + NSE").category("DAST — Templates")
                         .description("Classique & polyvalent — scripts NSE pour vulnérabilités connues").level(82).icon("🗺️").build(),
 
                 // DAST — Proxies d'interception
-                Skill.builder().name("mitmproxy").category("DAST").subcategory("Proxy")
+                Skill.builder().name("mitmproxy").category("DAST — Proxy")
                         .description("Proxy scriptable en Python — capture, modification & rejeu requêtes").level(84).icon("🔀").build(),
 
                 // SCA — Software Composition Analysis
@@ -344,13 +329,13 @@ public class DataSeeder implements CommandLineRunner {
                 Skill.builder().name("Grype").category("SCA")
                         .description("Analyse CVE packages & images conteneurs").level(78).icon("🔬").build(),
 
-                // Observabilité
+                // Observabilite
                 Skill.builder().name("Prometheus").category("Observabilité")
                         .description("Collecte métriques & alerting").level(80).icon("📈").build(),
                 Skill.builder().name("Grafana").category("Observabilité")
                         .description("Dashboards & visualisation").level(78).icon("📉").build(),
 
-                // Développement
+                // Developpement
                 Skill.builder().name("Spring Boot").category("Développement")
                         .description("API REST & microservices Java").level(85).icon("🍃").build(),
                 Skill.builder().name("React").category("Développement")
