@@ -142,8 +142,16 @@
   min-width: 160px;
 }
 
-@media (max-width: 600px) {
-  .contact__submit { width: 100%; align-self: stretch; }
+@media (max-width: 768px) {
+  .contact__layout { grid-template-columns: 1fr; gap: 20px; }
+  .contact__row { grid-template-columns: 1fr; }
+  .contact__card,
+  .contact__cta-box { padding: 20px; }
+  .contact__field input,
+  .contact__field textarea {
+    font-size: 16px;
+    padding: 16px;
+  }
 }
 
 .contact__submit:disabled {
@@ -152,7 +160,6 @@
   transform: none !important;
 }
 
-@media (max-width: 768px) {
-  .contact__layout { grid-template-columns: 1fr; }
-  .contact__row { grid-template-columns: 1fr; }
+@media (max-width: 600px) {
+  .contact__submit { width: 100%; align-self: stretch; }
 }

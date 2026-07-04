@@ -16,6 +16,7 @@ import Projects from './components/Projects'
 import Journey from './components/Journey'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import RecruiterStrip from './components/RecruiterStrip'
 
 function App() {
   const [data, setData] = useState(null)
@@ -33,7 +34,7 @@ function App() {
     return (
       <div className="loading">
         <div className="loading__orb" />
-        <span className="loading__brand">Kalimaster</span>
+        <span className="loading__brand">NGOUYE GNING</span>
         <div className="loading__bar"><div className="loading__bar-fill" /></div>
         <p className="loading__text">Initialisation</p>
       </div>
@@ -51,25 +52,32 @@ function App() {
     )
   }
 
-  const { profile, projects, experiences, educations, skills } = data
+  const { profile, projects, experiences, educations, skills, cybersecurityCertifications } = data
+
+  const heroStats = {
+    projects: `${projects?.length ?? 0}+`,
+    certifications: `${cybersecurityCertifications?.length ?? 0}`,
+    skills: `${skills?.length ?? 0}+`,
+  }
 
   return (
     <>
       <CursorGlow />
       <ScrollProgress />
       <div className="app-bg" aria-hidden="true">
-        <div className="app-bg__aurora" />
-        <div className="app-bg__orb app-bg__orb--1" />
-        <div className="app-bg__orb app-bg__orb--2" />
-        <div className="app-bg__orb app-bg__orb--3" />
-        <div className="app-bg__beam" />
-        <div className="app-bg__beam app-bg__beam--2" />
+        <div className="app-bg__mesh" />
+        <div className="app-bg__noise" />
         <div className="app-bg__grid" />
-        <div className="app-bg__vignette" />
       </div>
       <Navbar />
       <main>
-        <Hero profile={profile} skills={skills} />
+        <Hero profile={profile} skills={skills} stats={heroStats} />
+        <RecruiterStrip
+          profile={profile}
+          projects={projects}
+          certifications={cybersecurityCertifications}
+          skills={skills}
+        />
         <About profile={profile} />
         <DevSecOpsTools skills={skills} />
         <AISection />

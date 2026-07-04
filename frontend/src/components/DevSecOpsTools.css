@@ -252,10 +252,9 @@
 .cyb-card,
 .cyb-project-card {
   padding: 24px;
-  border-radius: 20px;
-  background: rgba(15, 23, 42, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 18px 40px rgba(8, 15, 42, 0.22);
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   transition: transform 0.24s ease, box-shadow 0.24s ease;
 }
 
@@ -411,6 +410,8 @@
 
 .devsecops-tool__desc {
   font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.4;
 }
 
 .cybersecurity-certifications-section {
@@ -496,10 +497,6 @@
   text-decoration: none;
 }
 
-  color: var(--text-muted);
-  line-height: 1.4;
-}
-
 .devsecops-tool__level {
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -516,4 +513,48 @@
   .security-scan-intro { grid-template-columns: 1fr; }
   .devsecops-tools__grid { grid-template-columns: 1fr; }
   .sast-matrix__table { font-size: 0.8rem; }
+  .sast-matrix__table th,
+  .sast-matrix__table td { padding: 12px 14px; }
+  .sast-matrix__title { padding: 20px 18px 14px; font-size: 1rem; }
+  .dast-type-block { padding: 20px 18px; }
+  .dast-matrix__intro { padding: 0 18px 16px; }
+  .security-scan-card { padding: 22px; }
+  .devsecops-tools__category { padding: 22px; }
+  .devsecops-tools__cat-header { flex-direction: column; gap: 10px; }
+  .cyb-card p,
+  .cyb-project-card p { min-height: 0; }
+}
+
+@media (max-width: 600px) {
+  .cyb-cards-grid,
+  .cyb-projects-grid,
+  .certifications-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .cyb-card,
+  .cyb-project-card { padding: 18px; }
+  .cyb-card h3,
+  .cyb-project-card h4 { font-size: 1.05rem; }
+  .devsecops-tool {
+    flex-wrap: wrap;
+    padding: 14px;
+  }
+  .devsecops-tool__level {
+    width: 100%;
+    text-align: right;
+  }
+  .security-scan-card__header h3 { font-size: 1.15rem; }
+  .security-scan-card__tools {
+    gap: 6px;
+  }
+  .security-scan-card__tool {
+    font-size: 0.68rem;
+    padding: 4px 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .sast-matrix__table { min-width: 480px; font-size: 0.72rem; }
+  .devsecops-tools__category { padding: 16px; }
 }

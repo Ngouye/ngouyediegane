@@ -138,6 +138,12 @@
   .journey__item-marker { left: -26px; top: 24px; width: 10px; height: 10px; }
 }
 
+@media (max-width: 768px) {
+  .journey__grid { gap: 32px; }
+  .journey__item h4 { font-size: 1rem; }
+  .journey__desc { font-size: 0.85rem; }
+}
+
 @media (max-width: 520px) {
   .journey__item { margin-left: 16px; padding: 14px; }
   .journey__timeline::before { left: 8px; }

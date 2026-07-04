@@ -28,6 +28,11 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
+
+  useEffect(() => {
     const sections = links.map((l) => document.querySelector(l.href)).filter(Boolean)
     const observer = new IntersectionObserver(
       (entries) => {
@@ -46,10 +51,10 @@ export default function Navbar() {
       <nav className="navbar__pill glass">
         <a href="#accueil" className="navbar__logo">
           <span className="navbar__logo-mark">NDG</span>
-          <span className="navbar__logo-text">Kalimaster</span>
+          <span className="navbar__logo-text">NGOUYE GNING</span>
         </a>
 
-        <ul className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
+        <ul id="navbar-menu" className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
           {links.map((link) => (
             <li key={link.href}>
               {link.href === '#contact' ? (
@@ -76,7 +81,9 @@ export default function Navbar() {
         <button
           className="navbar__burger"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Menu"
+          aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+          aria-expanded={menuOpen}
+          aria-controls="navbar-menu"
         >
           {menuOpen ? <FiX size={22} /> : <FiMenu size={22} />}
         </button>

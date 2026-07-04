@@ -87,6 +87,10 @@
   transition: var(--transition);
 }
 
+@media (hover: none) {
+  .project-card__overlay { opacity: 1; }
+}
+
 .project-card:hover .project-card__overlay {
   opacity: 1;
 }
@@ -277,14 +281,29 @@
 
 @media (max-width: 768px) {
   .projects__grid { grid-template-columns: 1fr; }
+  .projects__filters { gap: 6px; margin-bottom: 32px; }
+  .projects__filter { padding: 10px 16px; font-size: 0.72rem; }
   .project-card--featured .project-card__image { height: 220px; }
   .project-card__body { padding: 18px; }
   .project-card__meta { flex-direction: column; align-items: flex-start; gap: 10px; }
   .project-card__overlay { padding: 16px; }
+  .project-modal { padding: 12px; align-items: flex-end; }
+  .project-modal__content { max-height: 92vh; border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+  .project-modal__hero { height: 200px; }
+  .project-modal__body { padding: 22px 20px 28px; margin-top: -32px; }
+  .project-modal__body h2 { font-size: 1.4rem; }
+  .project-modal__actions { flex-direction: column; }
+  .project-modal__actions .btn { width: 100%; justify-content: center; }
+  .project-modal__close { top: 12px; right: 12px; }
 }
 
 @media (max-width: 520px) {
   .project-card__image { height: 200px; }
   .project-card__body h3 { font-size: 1.1rem; }
   .project-card__body p { font-size: 0.88rem; }
+}
+
+@media (hover: hover) {
+  .project-card__overlay { opacity: 0; }
+  .project-card:hover .project-card__overlay { opacity: 1; }
 }
