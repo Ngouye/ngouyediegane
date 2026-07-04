@@ -250,6 +250,14 @@ public class DataSeeder implements CommandLineRunner {
                         .description("Kubernetes managé sur AWS").level(82).icon("☸️").build(),
                 Skill.builder().name("Amazon S3").category("Cloud AWS")
                         .description("Stockage objets & artefacts CI/CD").level(84).icon("🪣").build(),
+                Skill.builder().name("Amazon Route 53").category("Cloud AWS")
+                        .description("Gestion DNS hautement disponible et routage de trafic").level(80).icon("🌐").build(),
+                Skill.builder().name("Amazon CloudFront").category("Cloud AWS")
+                        .description("Réseau de diffusion de contenu (CDN) mondial et sécurisé").level(82).icon("⚡").build(),
+                Skill.builder().name("Amazon Certificate Manager").category("Cloud AWS")
+                        .description("Gestion, déploiement et renouvellement automatique des certificats SSL/TLS").level(85).icon("🔒").build(),
+                Skill.builder().name("AWS Amplify").category("Cloud AWS")
+                        .description("Déploiement automatisé et hébergement de serveurs front-end et d'applications mobiles").level(84).icon("🚀").build(),
                 Skill.builder().name("Amazon RDS").category("Cloud AWS")
                         .description("Bases de données managées").level(78).icon("🗄️").build(),
                 Skill.builder().name("Amazon VPC").category("Cloud AWS")

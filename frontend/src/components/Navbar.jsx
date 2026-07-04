@@ -50,7 +50,7 @@ export default function Navbar() {
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <nav className="navbar__pill glass">
         <a href="#accueil" className="navbar__logo">
-          <span className="navbar__logo-mark">NDG</span>
+          <span className="navbar__logo-mark">NG</span>
           <span className="navbar__logo-text">NGOUYE GNING</span>
         </a>
 
