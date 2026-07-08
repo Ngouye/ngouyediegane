@@ -52,9 +52,9 @@ INSERT INTO cybersecurity_skills (expertise_id, skill) VALUES
 ((SELECT id FROM cybersecurity_expertise WHERE title = 'Secret Detection' LIMIT 1), 'Prévention de fuites');
 
 -- Insertion des certifications
-INSERT INTO cybersecurity_certifications (name, issuer, credential_id, credential_url, description, issued_date, expiry_date, icon, active) VALUES
-('OSCP', 'Offensive Security', 'OSCP-12345', 'https://www.credly.com', 'Certification pratique en pentesting', '2023-06-15', '2026-06-15', '🏅', true),
-('CEH', 'EC-Council', 'CEH-67890', 'https://www.credly.com', 'Certified Ethical Hacker', '2022-12-01', '2025-12-01', '🎯', true),
-('AZ-900', 'Microsoft', 'AZ-900-11111', 'https://www.credly.com', 'Azure Fundamentals', '2023-03-20', NULL, '☁️', true),
-('CRPO', 'Certified Ransomware Protection Officer', 'CRPO-2025', 'https://www.credly.com', 'Certification en stratégies de protection et mitigation ransomware.', '2025-04-15', NULL, '🛡️', true),
-('AWS Security', 'Amazon', 'AWS-22222', 'https://www.credly.com', 'AWS Security Fundamentals', '2023-01-15', NULL, '☁️', true);
+INSERT INTO cybersecurity_certifications (name, issuer, credential_id, credential_url, description, issued_date, expiry_date, icon, image_url, active) VALUES
+('OSCP', 'Offensive Security', 'OSCP-12345', 'https://www.credly.com', 'Certification pratique en pentesting', '2023-06-15', '2026-06-15', '🏅', '/certs/oscp.png', true),
+('CEH', 'EC-Council', 'CEH-67890', 'https://www.credly.com', 'Certified Ethical Hacker', '2022-12-01', '2025-12-01', '🎯', '/certs/ceh.png', true),
+('AZ-900', 'Microsoft', 'AZ-900-11111', 'https://www.credly.com', 'Azure Fundamentals', '2023-03-20', NULL, '☁️', '/certs/az-900.png', true),
+('CRPO', 'Certified Ransomware Protection Officer', 'CRPO-2025', 'https://www.credly.com', 'Certification en stratégies de protection et mitigation ransomware.', '2025-04-15', NULL, '🛡️', '/certs/crpo.png', true),
+('AWS Security', 'Amazon', 'AWS-22222', 'https://www.credly.com', 'AWS Security Fundamentals', '2023-01-15', NULL, '☁️', '/certs/aws-security.png', true);

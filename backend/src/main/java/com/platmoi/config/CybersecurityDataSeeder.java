@@ -166,6 +166,7 @@ public class CybersecurityDataSeeder {
                     .issuedDate(LocalDate.of(2025, 4, 15))
                     .expiryDate(null)
                     .icon("🛡️")
+                    .imageUrl("/certs/crpo.png")
                     .active(true)
                     .build();
 
@@ -178,6 +179,7 @@ public class CybersecurityDataSeeder {
                     .issuedDate(LocalDate.of(2025, 1, 1))
                     .expiryDate(null)
                     .icon("🎓")
+                    .imageUrl("/certs/cs50p-introduction-to-programming-with-python.png")
                     .active(true)
                     .build();
 
@@ -190,6 +192,7 @@ public class CybersecurityDataSeeder {
                     .issuedDate(LocalDate.of(2025, 12, 1))
                     .expiryDate(null)
                     .icon("🧭")
+                    .imageUrl("/certs/introduction-a-la-methode-ebios-risk-manager.png")
                     .active(true)
                     .build();
 
@@ -202,6 +205,7 @@ public class CybersecurityDataSeeder {
                     .issuedDate(LocalDate.of(2026, 2, 1))
                     .expiryDate(null)
                     .icon("🤖")
+                    .imageUrl("/certs/certificat-en-intelligence-artificielle.png")
                     .active(true)
                     .build();
 
@@ -214,6 +218,7 @@ public class CybersecurityDataSeeder {
                     .issuedDate(LocalDate.of(2016, 3, 1))
                     .expiryDate(null)
                     .icon("🏅")
+                    .imageUrl("/certs/student-soc-program-foundations-microsoft.png")
                     .active(true)
                     .build();
 

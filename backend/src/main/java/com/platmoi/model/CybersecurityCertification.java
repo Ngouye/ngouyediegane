@@ -29,5 +29,7 @@ public class CybersecurityCertification {
     private LocalDate issuedDate;
     private LocalDate expiryDate;
     private String icon;
+    @Column(name = "image_url")
+    private String imageUrl;
     private boolean active;
 }
