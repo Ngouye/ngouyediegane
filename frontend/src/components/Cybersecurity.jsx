@@ -13,6 +13,12 @@ function slugify(name) {
     .replace(/(^-|-$)/g, '')
 }
 
+function getCertImageUrl(imageUrl, name) {
+  const base = import.meta.env.BASE_URL || '/'
+  const relativePath = imageUrl ? imageUrl.replace(/^\//, '') : `certs/${slugify(name)}.png`
+  return `${base}${relativePath}`
+}
+
 export default function Cybersecurity({ data }) {
   const [ref, visible] = useReveal()
   const [expertise, setExpertise] = useState([])
@@ -100,7 +106,7 @@ export default function Cybersecurity({ data }) {
                       <div className="certification-card__header">
                         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                           <img
-                            src={cert.imageUrl || `/certs/${slugify(cert.name)}.png`}
+                            src={getCertImageUrl(cert.imageUrl, cert.name)}
                             alt={cert.name}
                             className="certification-badge"
                             style={{ width: 56, height: 56, objectFit: 'cover', borderRadius: 8 }}
