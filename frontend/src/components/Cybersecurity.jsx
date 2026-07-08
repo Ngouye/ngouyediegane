@@ -100,7 +100,7 @@ export default function Cybersecurity({ data }) {
                       <div className="certification-card__header">
                         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                           <img
-                            src={`/certs/${slugify(cert.name)}.svg`}
+                            src={`/certs/${slugify(cert.name)}.png`}
                             alt={cert.name}
                             className="certification-badge"
                             style={{ width: 56, height: 56, objectFit: 'cover', borderRadius: 8 }}
