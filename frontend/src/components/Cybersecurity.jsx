@@ -3,6 +3,16 @@ import SectionHeader from './SectionHeader'
 import { useReveal } from '../hooks/useReveal'
 import './Cybersecurity.css'
 
+function slugify(name) {
+  return (name || '')
+    .toString()
+    .normalize('NFD')
+    .replace(/[\u0000-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '')
+}
+
 export default function Cybersecurity({ data }) {
   const [ref, visible] = useReveal()
   const [expertise, setExpertise] = useState([])
@@ -87,13 +97,22 @@ export default function Cybersecurity({ data }) {
             <div className="certifications-grid">
               {certifications.map((cert) => (
                 <div key={cert.id} className="certification-card">
-                  <div className="certification-card__header">
-                    <span className="certification-card__icon">{cert.icon || '🏆'}</span>
-                    <div>
-                      <h4 className="certification-card__name">{cert.name}</h4>
-                      <p className="certification-card__issuer">{cert.issuer}</p>
-                    </div>
-                  </div>
+                      <div className="certification-card__header">
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                          <img
+                            src={`/certs/${slugify(cert.name)}.svg`}
+                            alt={cert.name}
+                            className="certification-badge"
+                            style={{ width: 56, height: 56, objectFit: 'cover', borderRadius: 8 }}
+                            onError={(e) => { e.currentTarget.style.display = 'none' }}
+                          />
+                          <span className="certification-card__icon">{cert.icon || '🏆'}</span>
+                          <div>
+                            <h4 className="certification-card__name">{cert.name}</h4>
+                            <p className="certification-card__issuer">{cert.issuer}</p>
+                          </div>
+                        </div>
+                      </div>
 
                   {cert.description && (
                     <p className="certification-card__description">{cert.description}</p>
