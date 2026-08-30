@@ -1,0 +1,53 @@
+.app-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.app-bg__mesh {
+  position: absolute;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(14, 165, 233, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 40%);
+  animation: mesh-drift 15s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+  filter: blur(60px);
+}
+
+.app-bg__noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+.app-bg__grid {
+  display: none;
+}
+
+@keyframes mesh-drift {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  50% { transform: translate(-10%, 5%) rotate(10deg) scale(1.2); }
+  100% { transform: translate(5%, -10%) rotate(-10deg) scale(1); }
+}
+
+@keyframes grid-move {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 50px; }
+}
+
+main, .navbar, .footer, .recruiter-strip {
+  position: relative;
+  z-index: 2;
+}
+
+main > section:nth-child(even) {
+  background: linear-gradient(180deg, transparent, rgba(8, 12, 24, 0.5) 45%, transparent);
+}
