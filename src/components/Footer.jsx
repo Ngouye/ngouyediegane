@@ -11,7 +11,7 @@ export default function Footer({ profile }) {
       <div className="container footer__inner">
         <div className="footer__top">
           <div className="footer__brand">
-            <span className="footer__logo">NG</span>
+            <img src="/logo.png?v=2" alt="Kalimaster Ngouye Gning" className="footer__logo-img" />
             <div>
               <p className="footer__name">{profile?.fullName}</p>
               <p className="footer__tagline">DevSecOps Engineer</p>

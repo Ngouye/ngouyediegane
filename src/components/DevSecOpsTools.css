@@ -154,7 +154,9 @@
 .security-scan-card {
   padding: 28px;
   border-top: 3px solid var(--scan-color);
-  background: #ffffff;
+  background: var(--bg-card);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
@@ -211,9 +213,9 @@
   font-weight: 600;
   padding: 6px 16px;
   border-radius: 20px;
-  background: #f1f5f9;
+  background: rgba(255, 255, 255, 0.05);
   border: none;
-  color: #334155;
+  color: var(--text-primary);
 }
 
 .devsecops-tools__category--security {
@@ -256,7 +258,9 @@
 .cyb-project-card {
   padding: 28px;
   border-radius: var(--radius-lg);
-  background: #ffffff;
+  background: var(--bg-card);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border: 1px solid var(--border);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
   transition: transform 0.24s ease, box-shadow 0.24s ease;
@@ -317,9 +321,9 @@
   justify-content: center;
   padding: 6px 16px;
   border-radius: 20px;
-  background: #f1f5f9;
+  background: rgba(255, 255, 255, 0.05);
   border: none;
-  color: #334155;
+  color: var(--text-primary);
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 600;

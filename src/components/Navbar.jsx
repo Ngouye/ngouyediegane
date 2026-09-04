@@ -50,8 +50,7 @@ export default function Navbar() {
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <nav className="navbar__pill glass">
         <a href="#accueil" className="navbar__logo">
-          <span className="navbar__logo-mark">NG</span>
-          <span className="navbar__logo-text">NGOUYE GNING</span>
+          <img src="/logo.png?v=2" alt="Kalimaster Ngouye Gning" className="navbar__logo-img" />
         </a>
 
         <ul id="navbar-menu" className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>

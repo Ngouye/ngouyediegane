@@ -13,6 +13,19 @@ export const profile = {
 
 export const projects = [
   {
+    id: 0,
+    title: "SamaBoutik",
+    description: "Créez votre vitrine en 2 minutes. La solution e-commerce tout-en-un.",
+    longDescription: "Gérez vos produits, recevez des commandes sur WhatsApp et suivez vos livraisons en temps réel. La plateforme idéale pour lancer son e-commerce sans friction.",
+    imageUrl: "/samaboutik.png",
+    demoUrl: "https://samaboutik-nine.vercel.app",
+    category: "Full Stack",
+    featured: true,
+    startDate: "2026-08-01",
+    endDate: "2026-09-01",
+    technologies: ["React", "Vercel", "E-commerce", "SaaS"]
+  },
+  {
     id: 1,
     title: "Pipeline CI/CD AWS CodePipeline",
     description: "Pipeline complet CodeBuild → CodeDeploy avec intégration sécurisée.",
@@ -252,21 +265,53 @@ export const skills = [
 
 export const cybersecurityCertifications = [
   {
-    id: "cert-1",
-    name: "AWS Certified Security - Specialty",
-    issuer: "Amazon Web Services",
-    issuedDate: "2024-05-15",
-    description: "Validation de l'expertise en sécurisation des environnements AWS.",
-    icon: "🔒",
+    id: "cert-3",
+    name: "Student SOC Program Foundations training",
+    issuer: "Microsoft",
+    issuedDate: "2026-03-12",
+    description: "Formation aux fondamentaux du centre opérationnel de sécurité (SOC).",
+    icon: "🛡️",
+    imageUrl: "/certs/student-soc-program-foundations-microsoft.png",
     active: true
   },
   {
-    id: "cert-2",
-    name: "Certified Ethical Hacker (CEH)",
-    issuer: "EC-Council",
-    issuedDate: "2023-11-10",
-    description: "Maîtrise des techniques de hacking éthique et tests d'intrusion.",
-    icon: "🛡️",
+    id: "cert-4",
+    name: "CS50's Introduction to Programming with Python",
+    issuer: "Harvard University",
+    issuedDate: "2025-01-01",
+    description: "Introduction approfondie à la programmation et à l'algorithmique avec Python.",
+    icon: "🐍",
+    imageUrl: "/certs/cs50p-introduction-to-programming-with-python.png",
+    active: true
+  },
+  {
+    id: "cert-5",
+    name: "Introduction à la méthode EBIOS Risk Manager",
+    issuer: "Club EBIOS & ANSSI",
+    issuedDate: "2025-12-28",
+    description: "Formation sur la méthode de gestion des risques de cybersécurité EBIOS RM.",
+    icon: "📊",
+    imageUrl: "/certs/introduction-a-la-methode-ebios-risk-manager.png",
+    active: true
+  },
+  {
+    id: "cert-6",
+    name: "Certified Ransomware Protection Officer (CRPO)",
+    issuer: "EU Cyber Academy",
+    issuedDate: "2026-02-23",
+    description: "Certification sur la protection, la résilience et la réponse contre les ransomwares.",
+    icon: "🔐",
+    imageUrl: "/certs/crpo.png",
+    active: true
+  },
+  {
+    id: "cert-7",
+    name: "Intelligence Artificielle pour tous",
+    issuer: "FORCE-N",
+    issuedDate: "2026-02-01",
+    description: "Attestation de réussite du programme sur les concepts et applications de l'IA.",
+    icon: "🤖",
+    imageUrl: "/certs/certificat-en-intelligence-artificielle.png",
     active: true
   }
 ];
