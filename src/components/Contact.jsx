@@ -1,127 +1,163 @@
 import { useState } from 'react'
-import { FiSend, FiMail, FiMapPin, FiCheck, FiMessageCircle } from 'react-icons/fi'
-import { sendContact } from '../api/portfolioApi'
+import { FiSend, FiMail, FiLinkedin, FiPhone, FiMapPin, FiInfo } from 'react-icons/fi'
 import SectionHeader from './SectionHeader'
 import { useReveal } from '../hooks/useReveal'
 import './Contact.css'
 
+const EMPTY_FORM = { name: '', email: '', subject: '', message: '' }
+
 export default function Contact({ profile }) {
-  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
-  const [status, setStatus] = useState(null)
-  const [loading, setLoading] = useState(false)
+  const [form, setForm] = useState(EMPTY_FORM)
+  const [opened, setOpened] = useState(false)
   const [ref, visible] = useReveal()
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
+
+  // Pas de backend : le message est pré-rempli dans la messagerie du visiteur
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const subject = `[Portfolio] ${form.subject}`
+    const body = `${form.message}\n\n—\n${form.name}\n${form.email}`
+    window.location.href =
+      `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    setOpened(true)
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setLoading(true)
-    setStatus(null)
-    try {
-      await sendContact(form)
-      setStatus('success')
-      setForm({ name: '', email: '', subject: '', message: '' })
-    } catch {
-      setStatus('error')
-    } finally {
-      setLoading(false)
-    }
-  }
+  const channels = [
+    { icon: FiMail, label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
+    profile.phone && {
+      icon: FiPhone, label: 'Téléphone', value: profile.phone, href: `tel:${profile.phone.replace(/\s/g, '')}`,
+    },
+    profile.linkedinUrl && {
+      icon: FiLinkedin, label: 'LinkedIn', value: 'Ngouye Gning', href: profile.linkedinUrl, external: true,
+    },
+    { icon: FiMapPin, label: 'Localisation', value: profile.location },
+  ].filter(Boolean)
+
+  const availability = [
+    { label: 'Statut', value: profile.availability?.replace(/^Disponible — /, '') ?? 'Disponible' },
+    { label: 'Délai de réponse', value: 'Sous 24 heures' },
+    { label: 'Fuseau horaire', value: 'GMT (Dakar)' },
+  ]
 
   return (
-    <section id="contact" className="section contact">
+    <section id="contact" className="section">
       <div className="container">
         <SectionHeader
-          label="06 — Contact"
-          title={<>Travaillons <span>ensemble</span></>}
-          subtitle="Un projet, une opportunité ou simplement envie d'échanger ? Écrivez-moi."
+          center
+          label="Contact"
+          title={<>Parlons de votre <em>projet.</em></>}
+          subtitle="Un poste, une mission ou un projet sécurité ? Écrivez-moi, je réponds généralement sous 24 heures."
         />
 
-        <div ref={ref} className={`contact__layout reveal ${visible ? 'reveal--visible' : ''}`}>
-          <div className="contact__aside">
-            <div className="contact__card card">
-              <FiMail className="contact__card-icon" />
-              <span className="contact__card-label">Email</span>
-              <a href={`mailto:${profile?.email}`}>{profile?.email}</a>
-            </div>
-            <div className="contact__card card">
-              <FiMapPin className="contact__card-icon" />
-              <span className="contact__card-label">Localisation</span>
-              <span>{profile?.location}</span>
-            </div>
-            <div className="contact__cta-box card">
-              <FiMessageCircle size={28} />
-              <p>Je réponds généralement sous <strong>24h</strong>. Hâte de vous lire !</p>
-            </div>
-          </div>
-
-          <form className="contact__form card" onSubmit={handleSubmit}>
+        <div ref={ref} className={`contact__layout stagger ${visible ? 'is-visible' : ''}`}>
+          <form className="contact__form card" onSubmit={handleSubmit} style={{ '--i': 0 }}>
+            <h3 className="contact__card-title serif">Votre message</h3>
             <div className="contact__row">
               <div className="contact__field">
-                <label htmlFor="name">Nom complet</label>
+                <label htmlFor="contact-name">Nom complet</label>
                 <input
-                  id="name"
+                  id="contact-name"
                   name="name"
+                  autoComplete="name"
+                  placeholder="Prénom Nom"
                   value={form.name}
                   onChange={handleChange}
                   required
-                  placeholder="Votre nom"
                 />
               </div>
               <div className="contact__field">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="contact-email">Email</label>
                 <input
-                  id="email"
+                  id="contact-email"
                   name="email"
                   type="email"
+                  autoComplete="email"
+                  placeholder="vous@entreprise.com"
                   value={form.email}
                   onChange={handleChange}
                   required
-                  placeholder="vous@email.com"
                 />
               </div>
             </div>
             <div className="contact__field">
-              <label htmlFor="subject">Sujet</label>
+              <label htmlFor="contact-subject">Sujet</label>
               <input
-                id="subject"
+                id="contact-subject"
                 name="subject"
+                placeholder="Poste, mission, audit…"
                 value={form.subject}
                 onChange={handleChange}
                 required
-                placeholder="De quoi souhaitez-vous parler ?"
               />
             </div>
             <div className="contact__field">
-              <label htmlFor="message">Message</label>
+              <label htmlFor="contact-message">Message</label>
               <textarea
-                id="message"
+                id="contact-message"
                 name="message"
+                rows={6}
+                placeholder="Décrivez votre besoin en quelques lignes."
                 value={form.message}
                 onChange={handleChange}
                 required
-                rows={5}
-                placeholder="Décrivez votre projet ou votre demande..."
               />
             </div>
 
-            {status === 'success' && (
-              <div className="contact__alert contact__alert--success">
-                <FiCheck /> Message envoyé — merci !
-              </div>
-            )}
-            {status === 'error' && (
-              <div className="contact__alert contact__alert--error">
-                Erreur d'envoi. Réessayez plus tard.
-              </div>
+            {opened && (
+              <p className="contact__notice" role="status">
+                <FiInfo aria-hidden="true" />
+                <span>
+                  Votre messagerie s'est ouverte avec le message pré-rempli : il ne reste qu'à l'envoyer.
+                  Rien ne s'est ouvert ? Écrivez-moi directement à{' '}
+                  <a href={`mailto:${profile.email}`}>{profile.email}</a>.
+                </span>
+              </p>
             )}
 
-            <button type="submit" className="btn btn-primary contact__submit" disabled={loading}>
-              <FiSend /> {loading ? 'Envoi en cours...' : 'Envoyer le message'}
+            <button type="submit" className="btn btn-primary contact__submit">
+              <FiSend className="btn__arrow" /> Envoyer le message
             </button>
           </form>
+
+          <div className="contact__aside" style={{ '--i': 1 }}>
+            <div className="card contact__card">
+              <h3 className="contact__card-title serif">Coordonnées</h3>
+              <ul className="contact__channels">
+                {channels.map(({ icon: Icon, label, value, href, external }) => (
+                  <li key={label} className="contact__channel">
+                    <span className="contact__channel-icon" aria-hidden="true"><Icon size={18} /></span>
+                    <span>
+                      <span className="contact__channel-label">{label}</span>
+                      {href ? (
+                        <a
+                          href={href}
+                          className="contact__channel-value contact__channel-value--link"
+                          {...(external && { target: '_blank', rel: 'noreferrer' })}
+                        >
+                          {value}
+                        </a>
+                      ) : (
+                        <span className="contact__channel-value">{value}</span>
+                      )}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="card contact__card">
+              <h3 className="contact__card-title serif">Disponibilité</h3>
+              <dl className="contact__hours">
+                {availability.map((row) => (
+                  <div key={row.label}>
+                    <dt>{row.label}</dt>
+                    <dd>{row.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
         </div>
       </div>
     </section>

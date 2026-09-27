@@ -4,12 +4,95 @@ export const profile = {
   email: "gningngouye2001@gmail.com",
   phone: "+221 77 952 77 84",
   location: "Dakar, Sénégal",
-  bio: "Administrateur système et cloud avec une spécialisation DevSecOps et IA, spécialisé dans la détection de menaces, la réponse aux incidents et l'automatisation sécurisée. Je combine des connaissances théoriques en cryptographie (Master UCAD) avec une maîtrise opérationnelle des infrastructures Cloud AWS, de l'automatisation via Ansible et des solutions IA. Orienté Zero Trust, durcissement système, réduction de surface d'attaque et surveillance proactive des environnements critiques.",
+  // Formation en cours, affichée dans l'accueil et « À propos »
+  degree: "Master 2 Transmission des données et sécurité de l'information",
+  school: "UCAD",
+  bio: "Étudiant en Master 2 Transmission des données et sécurité de l'information à l'UCAD, administrateur système et cloud spécialisé DevSecOps et IA : détection de menaces, réponse aux incidents et automatisation sécurisée. Je combine des bases solides en cryptographie et en sécurité des transmissions avec une maîtrise opérationnelle des infrastructures Cloud AWS, de l'automatisation via Ansible et des solutions IA. Orienté Zero Trust, durcissement système, réduction de surface d'attaque et surveillance proactive des environnements critiques.",
   avatarUrl: "/ngouye.png",
   githubUrl: "https://github.com/ngouyegning",
   linkedinUrl: "https://www.linkedin.com/in/ngouye-gning-316a812b3",
-  cvUrl: "#"
+  // Déposer le CV dans public/ (ex. /cv-ngouye-gning.pdf) et renseigner le chemin ici
+  cvUrl: "",
+  availability: "Disponible — CDI, alternance & missions"
 };
+
+// Domaines d'expertise — `icon` correspond à une clé de EXPERTISE_ICONS (Expertise.jsx)
+export const expertise = [
+  {
+    id: "soc",
+    icon: "shield",
+    title: "SOC & détection",
+    summary: "Supervision de la sécurité, collecte centralisée des logs, règles de détection personnalisées et réponse aux incidents de premier niveau.",
+    tags: ["Wazuh", "SIEM", "FIM", "Alerting", "Réponse à incident"]
+  },
+  {
+    id: "devsecops",
+    icon: "git",
+    title: "DevSecOps",
+    summary: "Sécurité intégrée à chaque étape du pipeline CI/CD : analyse statique, dépendances, IaC, images, secrets et tests dynamiques.",
+    tags: ["SonarQube", "Semgrep", "Trivy", "Checkov", "Gitleaks", "OWASP ZAP"]
+  },
+  {
+    id: "cloud",
+    icon: "cloud",
+    title: "Cloud AWS & IaC",
+    summary: "Infrastructures AWS provisionnées en code, multi-environnements, avec moindre privilège IAM, chiffrement et observabilité.",
+    tags: ["AWS", "Terraform", "Ansible", "EKS", "IAM", "CloudWatch"]
+  },
+  {
+    id: "pentest",
+    icon: "target",
+    title: "Pentesting Web & Infra",
+    summary: "Audit d'applications et d'API (injections, authentification, autorisation) et des surfaces d'attaque réseau, avec rapports de remédiation priorisés.",
+    tags: ["Burp Suite", "Nuclei", "Nmap", "Metasploit", "OWASP ASVS"]
+  },
+  {
+    id: "network",
+    icon: "lock",
+    title: "Réseau & cryptographie",
+    summary: "Segmentation DMZ / LAN / WAN, filtrage et IPS, durcissement Zero Trust — appuyés par ma formation en transmission des données et sécurité de l'information (Master 2, UCAD).",
+    tags: ["FortiGate", "VLAN", "iptables", "AES", "RSA", "Zero Trust"]
+  },
+  {
+    id: "ai",
+    icon: "cpu",
+    title: "IA & MLOps",
+    summary: "Modèles de machine learning et deep learning, et leur mise en production : pipelines, versionnement et monitoring.",
+    tags: ["Scikit-learn", "PyTorch", "TensorFlow", "Pandas", "MLOps"]
+  }
+];
+
+// Étapes du workflow DevSecOps présenté dans « À propos »
+export const workflow = [
+  { title: "Pre-commit", description: "Détection de secrets avant tout ajout de code.", tools: ["Gitleaks", "TruffleHog"] },
+  { title: "Build & CI", description: "Analyses statiques : SAST, SCA et scan de l'IaC.", tools: ["SonarQube", "Semgrep", "Trivy", "Checkov"] },
+  { title: "Staging & DAST", description: "Tests dynamiques et validation des images.", tools: ["OWASP ZAP", "Nuclei", "Dockle"] },
+  { title: "Production", description: "Déploiement blue/green, sous supervision.", tools: ["AWS CodeDeploy", "Amazon ECS", "Amazon EKS"] }
+];
+
+// Regroupement des catégories de `skills` pour la section Compétences
+export const skillGroups = [
+  {
+    id: "appsec",
+    label: "Sécurité applicative",
+    categories: ["SAST", "DAST", "SCA", "Sécurité IaC", "Sécurité Images", "Détection Secrets"]
+  },
+  {
+    id: "cloud",
+    label: "Cloud & DevOps",
+    categories: ["Cloud AWS", "Conteneurisation", "Infrastructure as Code", "CI/CD", "Observabilité"]
+  },
+  {
+    id: "infra",
+    label: "SOC & infrastructure",
+    categories: ["SOC / SIEM", "Sécurité Réseau", "Virtualisation"]
+  },
+  {
+    id: "dev",
+    label: "Développement",
+    categories: ["Développement"]
+  }
+];
 
 export const projects = [
   {
@@ -107,7 +190,6 @@ export const projects = [
     description: "Plateforme portfolio Spring Boot + React avec PostgreSQL containerisé.",
     longDescription: "Application portfolio full stack : API REST Spring Boot, frontend React, base PostgreSQL. Docker Compose pour le dev local, pipeline GitHub Actions pour CI/CD, déploiement containerisé prêt pour Kubernetes.",
     imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600",
-    demoUrl: "http://localhost:5173",
     githubUrl: "https://github.com/ngouyegning/platmoi",
     category: "Full Stack",
     featured: false,
@@ -141,11 +223,12 @@ export const educations = [
     id: 1,
     institution: "Université Cheikh Anta Diop de Dakar",
     degree: "Master 2",
-    field: "Mathématiques, Cryptographie et Sécurité",
+    field: "Transmission des données et sécurité de l'information",
     location: "Dakar, Sénégal",
-    description: "Master orienté cryptographie, sécurité des systèmes et protection des données.",
+    description: "Transmission et protection des données : cryptographie, sécurité des réseaux et des systèmes d'information.",
     startDate: "2025-09-01",
-    endDate: "2026-06-01"
+    endDate: "2026-06-01",
+    current: true
   },
   {
     id: 2,

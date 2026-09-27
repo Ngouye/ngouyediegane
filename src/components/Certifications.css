@@ -1,0 +1,125 @@
+.certs__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.cert-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.cert-card__thumb {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  margin: 12px 12px 0;
+  border-radius: var(--radius);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  cursor: zoom-in;
+  overflow: hidden;
+}
+
+.cert-card__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.8s var(--ease-out);
+}
+
+.cert-card:hover .cert-card__thumb img { transform: scale(1.05); }
+
+.cert-card__zoom {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity var(--transition), transform 0.3s var(--ease-out);
+}
+
+.cert-card__thumb:hover .cert-card__zoom,
+.cert-card__thumb:focus-visible .cert-card__zoom {
+  opacity: 1;
+  transform: none;
+}
+
+.cert-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 24px 24px;
+}
+
+.cert-card__issuer {
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.cert-card__body h3 {
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.cert-card__body p {
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.cert-card__date {
+  margin-top: 6px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  color: var(--text-3);
+  font-size: 0.82rem;
+}
+
+/* Visionneuse */
+.cert-modal__image {
+  width: 100%;
+  height: auto;
+  background: var(--bg-soft);
+}
+
+.cert-modal__caption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 18px 24px;
+  border-top: 1px solid var(--border);
+}
+
+.cert-modal__caption strong { color: var(--navy); }
+
+.cert-modal__caption span {
+  color: var(--text-3);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 1000px) {
+  .certs__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .certs__grid { grid-template-columns: 1fr; gap: 16px; }
+  .cert-card__zoom { opacity: 1; transform: none; }
+}

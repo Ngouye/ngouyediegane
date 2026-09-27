@@ -1,0 +1,14 @@
+/* Hauteur fixe, largeur libre : les logos en forme de mot (aws, vmware, KICS) restent lisibles */
+.tool-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  height: var(--icon-size, 18px);
+  width: auto;
+  max-width: calc(var(--icon-size, 18px) * 2.4);
+  object-fit: contain;
+}
+
+.tool-tag {
+  gap: 7px;
+  padding-left: 8px;
+}

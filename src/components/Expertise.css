@@ -1,0 +1,52 @@
+.expertise__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.expertise-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 32px;
+}
+
+.expertise-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  transition: transform 0.5s var(--ease-out), background 0.3s ease, color 0.3s ease;
+}
+
+.expertise-card:hover .expertise-card__icon {
+  transform: rotate(-8deg) scale(1.08);
+  background: var(--accent);
+  color: #fff;
+}
+
+.expertise-card h3 {
+  margin-top: 6px;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.expertise-card p {
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.expertise-card .tag-list { margin-top: 6px; }
+
+@media (max-width: 900px) {
+  .expertise__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .expertise__grid { grid-template-columns: 1fr; gap: 16px; }
+  .expertise-card { padding: 24px; }
+}
