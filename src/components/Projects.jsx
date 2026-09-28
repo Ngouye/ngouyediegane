@@ -54,7 +54,9 @@ export default function Projects({ projects }) {
                 <div className="project-card__body">
                   <div className="project-card__meta">
                     <span className="eyebrow">{project.category}</span>
-                    <span className="project-card__date">{formatMonth(project.startDate)}</span>
+                    {project.startDate && (
+                      <span className="project-card__date">{formatMonth(project.startDate)}</span>
+                    )}
                   </div>
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
@@ -81,9 +83,11 @@ export default function Projects({ projects }) {
             <div className="project-modal__body">
               <div className="project-card__meta">
                 <span className="eyebrow">{selected.category}</span>
-                <span className="project-card__date">
-                  {formatMonth(selected.startDate)} — {selected.endDate ? formatMonth(selected.endDate) : 'En cours'}
-                </span>
+                {selected.startDate && (
+                  <span className="project-card__date">
+                    {formatMonth(selected.startDate)} — {selected.endDate ? formatMonth(selected.endDate) : 'En cours'}
+                  </span>
+                )}
               </div>
               <h3 className="project-modal__title">{selected.title}</h3>
               <p className="project-modal__desc">{selected.longDescription || selected.description}</p>

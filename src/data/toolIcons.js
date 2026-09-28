@@ -98,6 +98,8 @@ const ICONS = {
   'Bash': 'bash.svg',
   'Git': 'git.svg',
   'Vercel': 'vercel.svg',
+  'Vite': 'vite.svg',
+  'Supabase': 'supabase.svg',
 
   // IA
   'Scikit-learn': 'scikit-learn.svg',
@@ -112,6 +114,9 @@ const ICONS = {
   'Réponse à incident': 'concept-incident.svg',
   'VLAN': 'concept-vlan.svg',
   'AES': 'concept-aes.svg',
+  'AES-256-GCM': 'concept-aes.svg',
+  'PBKDF2': 'concept-pbkdf2.svg',
+  'Web Crypto API': 'concept-webcrypto.svg',
   'RSA': 'concept-rsa.svg',
   'Zero Trust': 'concept-zero-trust.svg',
   'MLOps': 'concept-mlops.svg',

@@ -100,13 +100,24 @@ export const projects = [
     title: "SamaBoutik",
     description: "Créez votre vitrine en 2 minutes. La solution e-commerce tout-en-un.",
     longDescription: "Gérez vos produits, recevez des commandes sur WhatsApp et suivez vos livraisons en temps réel. La plateforme idéale pour lancer son e-commerce sans friction.",
-    imageUrl: "/samaboutik.png",
+    imageUrl: "/samaboutik.jpg",
     demoUrl: "https://samaboutik-nine.vercel.app",
     category: "Full Stack",
     featured: true,
     startDate: "2026-08-01",
     endDate: "2026-09-01",
     technologies: ["React", "Vercel", "E-commerce", "SaaS"]
+  },
+  {
+    id: 8,
+    title: "SecureVault — Gestionnaire de mots de passe",
+    description: "Coffre-fort de mots de passe chiffré de bout en bout, directement dans le navigateur.",
+    longDescription: "Chaque identifiant (service, identifiant et mot de passe) est chiffré dans le navigateur en AES-256-GCM, avec un vecteur unique à chaque écriture et la détection de toute altération. La clé est dérivée localement du mot de passe maître (PBKDF2, 600 000 itérations) et n'est jamais stockée : le serveur ne reçoit que des données illisibles. Générateur de mots de passe sans biais statistique (8 à 64 caractères, force estimée en temps réel), verrouillage automatique après 5 min d'inactivité, effacement du presse-papiers après 30 s et bilan de sécurité des mots de passe faibles ou réutilisés.",
+    imageUrl: "/securevault.jpg",
+    demoUrl: "https://gestion-password.vercel.app/",
+    category: "Sécurité applicative",
+    featured: true,
+    technologies: ["React", "Vite", "Supabase", "Web Crypto API", "AES-256-GCM", "PBKDF2", "Vercel"]
   },
   {
     id: 1,
