@@ -54,13 +54,9 @@ export default function Hero({ profile, stats, features }) {
             <a href="#projets" className="btn btn-primary">
               Voir mes projets <FiArrowRight size={18} className="btn__arrow" />
             </a>
-            {profile.cvUrl ? (
-              <a href={profile.cvUrl} className="btn btn-outline" download>
-                <FiDownload size={18} /> Télécharger le CV
-              </a>
-            ) : (
-              <a href="#contact" className="btn btn-outline">Me contacter</a>
-            )}
+            <a href="#cv" className="btn btn-outline">
+              <FiDownload size={18} /> Mes CV
+            </a>
           </div>
 
           <ul ref={trustRef} className="hero__trust" aria-label="En bref">
@@ -75,8 +71,8 @@ export default function Hero({ profile, stats, features }) {
             <img
               src={profile.avatarUrl}
               alt={`Portrait de ${profile.fullName}`}
-              width="391"
-              height="638"
+              width="810"
+              height="749"
               fetchPriority="high"
               onError={(e) => {
                 e.currentTarget.onerror = null

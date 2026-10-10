@@ -8,6 +8,7 @@ import {
   expertise,
   workflow,
   skillGroups,
+  resumes,
 } from './data/portfolioData'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -17,6 +18,7 @@ import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Journey from './components/Journey'
 import Certifications from './components/Certifications'
+import Resumes from './components/Resumes'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import { useSpotlight } from './hooks/useSpotlight'
@@ -43,6 +45,7 @@ export default function App() {
         <Projects projects={projects} />
         <Journey experiences={experiences} educations={educations} />
         <Certifications certifications={cybersecurityCertifications} />
+        <Resumes resumes={resumes} />
         <Contact profile={profile} />
       </main>
       <Footer profile={profile} />

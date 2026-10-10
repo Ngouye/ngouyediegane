@@ -28,8 +28,8 @@ Tout le contenu est centralisé dans [`src/data/portfolioData.js`](src/data/port
 | `experiences`, `educations` | Parcours |
 | `cybersecurityCertifications` | Certifications (images dans `public/certs/`) |
 
-**CV :** déposer le fichier dans `public/` (ex. `public/cv-ngouye-gning.pdf`) et renseigner
-`cvUrl: "/cv-ngouye-gning.pdf"` : le bouton « Télécharger le CV » apparaît automatiquement.
+**CV :** les PDF et l'aperçu de leur 1re page (JPEG) sont dans `public/cv/`, et sont listés dans
+l'export `resumes` de `portfolioData.js` (section « CV »).
 
 ## Formulaire de contact
 

@@ -41,7 +41,7 @@ export default function Contact({ profile }) {
   ]
 
   return (
-    <section id="contact" className="section">
+    <section id="contact" className="section section--soft">
       <div className="container">
         <SectionHeader
           center

@@ -8,13 +8,42 @@ export const profile = {
   degree: "Master 2 Transmission des données et sécurité de l'information",
   school: "UCAD",
   bio: "Étudiant en Master 2 Transmission des données et sécurité de l'information à l'UCAD, administrateur système et cloud spécialisé DevSecOps et IA : détection de menaces, réponse aux incidents et automatisation sécurisée. Je combine des bases solides en cryptographie et en sécurité des transmissions avec une maîtrise opérationnelle des infrastructures Cloud AWS, de l'automatisation via Ansible et des solutions IA. Orienté Zero Trust, durcissement système, réduction de surface d'attaque et surveillance proactive des environnements critiques.",
-  avatarUrl: "/ngouye.png",
+  avatarUrl: "/ngouye.webp",
   githubUrl: "https://github.com/ngouyegning",
   linkedinUrl: "https://www.linkedin.com/in/ngouye-gning-316a812b3",
-  // Déposer le CV dans public/ (ex. /cv-ngouye-gning.pdf) et renseigner le chemin ici
-  cvUrl: "",
   availability: "Disponible — CDI, alternance & missions"
 };
+
+// CV téléchargeables (section « CV ») — PDF et aperçu de la 1re page dans public/cv/
+export const resumes = [
+  {
+    id: "soc",
+    title: "Analyste SOC",
+    subtitle: "Cybersécurité & protection ransomware",
+    summary: "Détection de menaces et réponse aux incidents : SIEM Wazuh, FortiGate, cryptographie et protection ransomware (CRPO).",
+    tools: ["Wazuh", "FortiGate", "iptables", "VMware"],
+    file: "/cv/cv-ngouye-gning-analyste-soc.pdf",
+    preview: "/cv/cv-ngouye-gning-analyste-soc.jpg"
+  },
+  {
+    id: "devsecops",
+    title: "Ingénieur Cloud DevSecOps & IA",
+    subtitle: "Cloud AWS, IaC & intelligence artificielle",
+    summary: "Architectures AWS sécurisées, automatisation Terraform et Ansible, sécurité intégrée aux pipelines CI/CD et industrialisation de modèles d'IA.",
+    tools: ["AWS", "Terraform", "Kubernetes", "TensorFlow"],
+    file: "/cv/cv-ngouye-gning-devsecops-cloud-ia.pdf",
+    preview: "/cv/cv-ngouye-gning-devsecops-cloud-ia.jpg"
+  },
+  {
+    id: "sysadmin",
+    title: "Administrateur Système & Cloud",
+    subtitle: "Linux, AWS & automatisation",
+    summary: "Administration Linux et AWS, automatisation de flotte avec Ansible, durcissement système, maintien en condition opérationnelle et haute disponibilité.",
+    tools: ["Linux", "Ansible", "AWS", "Docker"],
+    file: "/cv/cv-ngouye-gning-admin-systeme-cloud.pdf",
+    preview: "/cv/cv-ngouye-gning-admin-systeme-cloud.jpg"
+  }
+];
 
 // Domaines d'expertise — `icon` correspond à une clé de EXPERTISE_ICONS (Expertise.jsx)
 export const expertise = [
@@ -207,6 +236,47 @@ export const projects = [
     startDate: "2025-01-01",
     endDate: "2026-06-06",
     technologies: ["Spring Boot", "React", "PostgreSQL", "Docker", "GitHub Actions"]
+  },
+  // Projets repris des CV — images : illustrations de public/projects/ (à remplacer par des captures)
+  {
+    id: 9,
+    title: "Secure File Monitor",
+    description: "Surveillance de l'intégrité des fichiers (SHA-256) et chiffrement AES.",
+    longDescription: "Application Spring Boot et React de surveillance de l'intégrité des fichiers : calcul et comparaison d'empreintes SHA-256 pour détecter toute modification, chiffrement des fichiers en AES et génération de rapports PDF avec Apache PDFBox.",
+    imageUrl: "/projects/secure-file-monitor.svg",
+    category: "Sécurité applicative",
+    featured: false,
+    technologies: ["Spring Boot", "React", "SHA-256", "AES", "Apache PDFBox"]
+  },
+  {
+    id: 10,
+    title: "EmployeeManagement — Gestion des employés",
+    description: "Application web Django de gestion des employés, avec authentification.",
+    longDescription: "Application web développée en Python avec Django pour la gestion des employés : authentification des utilisateurs, gestion CRUD complète des fiches employés (création, consultation, modification, suppression) et interface utilisateur sécurisée.",
+    imageUrl: "/projects/employee-management.svg",
+    category: "Full Stack",
+    featured: false,
+    technologies: ["Python", "Django", "Authentification"]
+  },
+  {
+    id: 11,
+    title: "Modèle YOLOv5 — Détection d'objets",
+    description: "Modèle de détection d'objets en temps réel basé sur YOLOv5.",
+    longDescription: "Mise en œuvre d'un modèle YOLOv5 pour la détection d'objets en temps réel : localisation des objets dans l'image par des boîtes englobantes et identification de leur classe.",
+    imageUrl: "/projects/yolov5-detection.svg",
+    category: "IA",
+    featured: false,
+    technologies: ["Python", "YOLOv5", "PyTorch", "Vision par ordinateur"]
+  },
+  {
+    id: 12,
+    title: "Détection de spam — Classifieur bayésien",
+    description: "Classification de messages en spam ou légitimes avec un modèle bayésien.",
+    longDescription: "Développement d'un modèle de classification de messages utilisant le classifieur bayésien naïf multinomial, qui estime la probabilité qu'un message soit un spam à partir de la fréquence des mots qu'il contient.",
+    imageUrl: "/projects/spam-detection.svg",
+    category: "IA",
+    featured: false,
+    technologies: ["Python", "Naive Bayes", "NLP"]
   }
 ];
 

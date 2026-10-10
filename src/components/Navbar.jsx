@@ -9,6 +9,7 @@ const links = [
   { href: '#projets', label: 'Projets' },
   { href: '#parcours', label: 'Parcours' },
   { href: '#certifications', label: 'Certifications' },
+  { href: '#cv', label: 'CV' },
 ]
 
 export default function Navbar() {
@@ -95,7 +96,7 @@ export default function Navbar() {
     <header className={`navbar ${scrolled ? 'navbar--solid' : ''} ${menuOpen ? 'navbar--open' : ''}`}>
       <nav className="container navbar__inner" aria-label="Navigation principale">
         <a href="#accueil" className="navbar__brand" onClick={close}>
-          <img src="/logo.png" alt="" className="navbar__logo" width="70" height="36" />
+          <img src="/logo-mark.png" alt="" className="navbar__logo" width="36" height="36" />
           <span className="navbar__brand-text">
             <span className="navbar__name">Ngouye Gning</span>
             <span className="navbar__tagline">SOC · DevSecOps · Cloud</span>

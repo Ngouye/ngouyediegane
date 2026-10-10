@@ -18,7 +18,7 @@ export default function Footer({ profile }) {
 
         <div className="footer__inner">
           <div className="footer__brand">
-            <img src="/logo.png" alt="" className="footer__logo" width="70" height="36" />
+            <img src="/logo-white.png" alt="kalimaster" className="footer__logo" width="146" height="32" />
             <span className="footer__divider" aria-hidden="true" />
             <div>
               <p className="footer__name serif">{name}</p>

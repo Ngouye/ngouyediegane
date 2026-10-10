@@ -4,6 +4,7 @@
 //   - dépôts / sites officiels des projets (Bandit, Checkov, KICS, tfsec, Dockle, Nuclei, Nmap…),
 //   - pictogrammes Lucide (préfixe « concept- ») pour les notions sans logo de marque.
 // UFW n'ayant pas de logo propre, il utilise celui d'Ubuntu (UFW est le pare-feu d'Ubuntu).
+// Apache PDFBox utilise le logo de la fondation Apache, YOLOv5 celui d'Ultralytics (son éditeur).
 const BASE = '/icons/tools/'
 
 const ICONS = {
@@ -100,12 +101,16 @@ const ICONS = {
   'Vercel': 'vercel.svg',
   'Vite': 'vite.svg',
   'Supabase': 'supabase.svg',
+  'Python': 'python.svg',
+  'Django': 'django.svg',
+  'Apache PDFBox': 'apache-pdfbox.svg',
 
   // IA
   'Scikit-learn': 'scikit-learn.svg',
   'PyTorch': 'pytorch.svg',
   'TensorFlow': 'tensorflow.svg',
   'Pandas': 'pandas.svg',
+  'YOLOv5': 'yolov5.svg',
 
   // Notions sans logo de marque
   'SIEM': 'concept-siem.svg',
@@ -117,6 +122,11 @@ const ICONS = {
   'AES-256-GCM': 'concept-aes.svg',
   'PBKDF2': 'concept-pbkdf2.svg',
   'Web Crypto API': 'concept-webcrypto.svg',
+  'SHA-256': 'concept-sha256.svg',
+  'Authentification': 'concept-auth.svg',
+  'Vision par ordinateur': 'concept-vision.svg',
+  'Naive Bayes': 'concept-bayes.svg',
+  'NLP': 'concept-nlp.svg',
   'RSA': 'concept-rsa.svg',
   'Zero Trust': 'concept-zero-trust.svg',
   'MLOps': 'concept-mlops.svg',

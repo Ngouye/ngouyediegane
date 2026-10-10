@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="Segoe UI, Inter, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1633"/><stop offset="1" stop-color="#173a86"/></linearGradient>
+    <radialGradient id="glow" cx="0.55" cy="0.35" r="0.6"><stop offset="0" stop-color="#5b8cff" stop-opacity="0.35"/><stop offset="1" stop-color="#5b8cff" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0v40" fill="none" stroke="#fff" stroke-opacity="0.05"/></pattern>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect width="1280" height="720" fill="url(#grid)"/>
+  <rect width="1280" height="720" fill="url(#glow)"/>
+  <line x1="80" y1="540" x2="1200" y2="540" stroke="#fff" stroke-opacity="0.15" stroke-width="3"/>
+
+  <!-- Silhouettes stylisées : personne, voiture, vélo -->
+  <g fill="#8fb0ff" fill-opacity="0.45">
+    <circle cx="362" cy="268" r="34"/><rect x="320" y="310" width="84" height="226" rx="42"/>
+    <path d="M602 470v-48q0-30 30-34l60-8 40-50q12-14 32-14h110q20 0 32 14l40 50 36 6q28 6 28 34v50z"/>
+  </g>
+  <g fill="#0b1633" stroke="#8fb0ff" stroke-width="5"><circle cx="672" cy="490" r="36"/><circle cx="880" cy="490" r="36"/></g>
+  <g fill="none" stroke="#8fb0ff" stroke-opacity="0.75" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="1010" cy="486" r="44"/><circle cx="1138" cy="486" r="44"/>
+    <path d="M1010 486l40-70h60l28 70M1050 416l30 70 30-70M1040 402h30"/>
+  </g>
+
+  <!-- Boîtes englobantes et classes détectées -->
+  <g fill="none" stroke-width="4">
+    <rect x="300" y="222" width="126" height="318" rx="6" stroke="#22d3ee"/>
+    <rect x="590" y="322" width="410" height="212" rx="6" stroke="#fb923c"/>
+    <rect x="952" y="384" width="242" height="152" rx="6" stroke="#34d399"/>
+  </g>
+  <rect x="300" y="186" width="176" height="36" rx="6" fill="#22d3ee"/><text x="312" y="211" font-size="19" font-weight="700" fill="#0b1633">personne 0.94</text>
+  <rect x="590" y="286" width="166" height="36" rx="6" fill="#fb923c"/><text x="602" y="311" font-size="19" font-weight="700" fill="#0b1633">voiture 0.91</text>
+  <rect x="952" y="348" width="132" height="36" rx="6" fill="#34d399"/><text x="964" y="373" font-size="19" font-weight="700" fill="#0b1633">vélo 0.87</text>
+
+  <text x="90" y="130" font-size="22" font-weight="700" fill="#fff" fill-opacity="0.85" letter-spacing="2">YOLOv5 · DÉTECTION EN TEMPS RÉEL</text>
+</svg>
