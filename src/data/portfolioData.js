@@ -9,7 +9,7 @@ export const profile = {
   school: "UCAD",
   bio: "Étudiant en Master 2 Transmission des données et sécurité de l'information à l'UCAD, administrateur système et cloud spécialisé DevSecOps et IA : détection de menaces, réponse aux incidents et automatisation sécurisée. Je combine des bases solides en cryptographie et en sécurité des transmissions avec une maîtrise opérationnelle des infrastructures Cloud AWS, de l'automatisation via Ansible et des solutions IA. Orienté Zero Trust, durcissement système, réduction de surface d'attaque et surveillance proactive des environnements critiques.",
   avatarUrl: "/ngouye.webp",
-  githubUrl: "https://github.com/ngouyegning",
+  githubUrl: "https://github.com/ngouye",
   linkedinUrl: "https://www.linkedin.com/in/ngouye-gning-316a812b3",
   availability: "Disponible — CDI, alternance & missions"
 };
@@ -150,16 +150,16 @@ export const projects = [
   },
   {
     id: 1,
-    title: "Pipeline CI/CD AWS CodePipeline",
-    description: "Pipeline complet CodeBuild → CodeDeploy avec intégration sécurisée.",
-    longDescription: "Conception et déploiement d'un pipeline CI/CD sur AWS : CodePipeline pour l'orchestration, CodeBuild pour la compilation et les tests, CodeDeploy pour le déploiement blue/green sur EC2 et ECS. Intégration SAST (Bearer, SonarQube, Semgrep), scan IaC (Checkov, tfsec), secrets (Gitleaks, TruffleHog), images (Dockle), SCA (Trivy) et DAST (OWASP ZAP).",
-    imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600",
-    githubUrl: "https://github.com/ngouyegning/aws-cicd-pipeline",
+    title: "Pipeline CI/CD DevSecOps — AWS CodePipeline",
+    description: "Du git push à la production : 10 outils de sécurité bloquants et déploiement blue/green sur ECS et EC2.",
+    longDescription: "Chaîne CI/CD qui met le code en production sur AWS sans intervention humaine, mais seulement s'il est sûr. À chaque push sur main, CodePipeline enchaîne : détection de secrets sur tout l'historique Git (Gitleaks, TruffleHog), SAST (Semgrep, Bearer, SonarQube) et scan IaC (Checkov, tfsec) en parallèle ; puis CodeBuild lance les tests unitaires (couverture minimale de 80 %), l'analyse des dépendances (Trivy), construit l'image Docker, la contrôle (Dockle, Trivy) et ne la pousse dans ECR que si tout est vert. CodeDeploy la déploie en blue/green sur ECS Fargate et sur EC2 (Auto Scaling Group), avec retour arrière automatique, puis OWASP ZAP scanne l'application déployée. Toute l'infrastructure (VPC, ALB, ECS, EC2, ECR, S3, KMS, IAM, pipeline) est décrite en Terraform, et les outils sont installés avec version épinglée et empreinte SHA-256 vérifiée. Les mêmes contrôles tournent sur chaque Pull Request dans GitHub Actions (shift-left).",
+    imageUrl: "/projects/cicd-devsecops.jpg",
+    githubUrl: "https://github.com/Ngouye/CI_CD_CodePipeline_AWS",
     category: "DevSecOps",
     featured: true,
-    startDate: "2025-01-01",
-    endDate: "2026-06-06",
-    technologies: ["AWS", "CodePipeline", "CodeBuild", "CodeDeploy", "Docker", "GitHub Actions"]
+    startDate: "2026-10-01",
+    endDate: "2026-10-16",
+    technologies: ["AWS", "CodePipeline", "CodeBuild", "CodeDeploy", "ECS", "EC2", "ECR", "Terraform", "Docker", "Node.js", "GitHub Actions", "Gitleaks", "TruffleHog", "Semgrep", "Bearer", "SonarQube", "Checkov", "tfsec", "Trivy", "Dockle", "OWASP ZAP"]
   },
   {
     id: 2,

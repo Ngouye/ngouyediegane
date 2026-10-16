@@ -23,6 +23,7 @@ const ICONS = {
   // AWS
   'AWS': 'aws.svg',
   'Amazon ECR': 'aws-ecr.png',
+  'ECR': 'aws-ecr.png',
   'AWS CodeBuild': 'aws-codebuild.png',
   'CodeBuild': 'aws-codebuild.png',
   'AWS CodeDeploy': 'aws-codedeploy.png',
@@ -112,6 +113,7 @@ const ICONS = {
   'Vercel': 'vercel.svg',
   'Vite': 'vite.svg',
   'Supabase': 'supabase.svg',
+  'Node.js': 'nodejs.svg',
   'Nginx': 'nginx.svg',
   'Flask': 'flask.svg',
   'Molecule': 'molecule.png',
