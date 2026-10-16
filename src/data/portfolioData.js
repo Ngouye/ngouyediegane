@@ -190,15 +190,15 @@ export const projects = [
   {
     id: 4,
     title: "Automatisation Cloud AWS avec Ansible",
-    description: "Gestion et administration d'une infrastructure cloud AWS via Ansible.",
-    longDescription: "Playbooks Ansible pour provisionner et durcis des serveurs Linux sur AWS, installer des agents de supervision et automatiser des déploiements sécurisés. Workflow avec pipelines CI/CD, hardening système et validation de configurations.",
-    imageUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600",
-    githubUrl: "https://github.com/ngouyegning/ansible-jenkins-automation",
+    description: "Une commande provisionne, durcit, supervise, déploie et valide une application web sur AWS.",
+    longDescription: "Automatisation de bout en bout, reproductible et sécurisée, de la mise en ligne d'une application web sur AWS, en 6 rôles Ansible. Une seule commande (make site) crée l'infrastructure (VPC sur 2 zones, Security Groups, rôle IAM, instances EC2 en IMDSv2 avec disque chiffré), durcit les serveurs avec plus de 50 mesures inspirées du CIS (SSH, sysctl, nftables, auditd, fail2ban, mises à jour automatiques), installe la supervision (Prometheus node_exporter, agent CloudWatch, alarmes avec auto-recovery), déploie l'application serveur par serveur avec retour arrière automatique en cas d'échec, puis vérifie 12 contrôles de conformité et produit un rapport. Inventaire dynamique par tags AWS, secrets dans SSM Parameter Store chiffré par KMS, chaîne d'approvisionnement vérifiée (SHA-256, signature GPG). CI/CD GitHub Actions : yamllint, ansible-lint en profil production, gitleaks, tests Molecule sur Ubuntu 24.04 et Rocky 9, déploiement via OIDC sans clé AWS stockée et détection de dérive chaque nuit.",
+    imageUrl: "/projects/ansible-aws.jpg",
+    githubUrl: "https://github.com/Ngouye/ProjectAnsible",
     category: "DevSecOps",
     featured: false,
-    startDate: "2024-01-01",
-    endDate: "2024-06-01",
-    technologies: ["Ansible", "AWS", "Linux", "Security Hardening", "Bash"]
+    startDate: "2026-10-01",
+    endDate: "2026-10-14",
+    technologies: ["Ansible", "AWS", "EC2", "VPC", "IAM", "Ubuntu", "Nginx", "Flask", "nftables", "fail2ban", "Prometheus", "CloudWatch", "Molecule", "Gitleaks", "GitHub Actions"]
   },
   {
     id: 5,

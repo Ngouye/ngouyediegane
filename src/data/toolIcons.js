@@ -5,6 +5,7 @@
 //   - pictogrammes Lucide (préfixe « concept- ») pour les notions sans logo de marque.
 // UFW n'ayant pas de logo propre, il utilise celui d'Ubuntu (UFW est le pare-feu d'Ubuntu).
 // Apache PDFBox utilise le logo de la fondation Apache, YOLOv5 celui d'Ultralytics (son éditeur).
+// nftables utilise le logo de netfilter (le projet qui le développe, comme iptables).
 // TFLint n'a pas de logo officiel : il est représenté par un pictogramme de liste de contrôles.
 const BASE = '/icons/tools/'
 
@@ -29,6 +30,7 @@ const ICONS = {
   'AWS CodePipeline': 'aws-codepipeline.png',
   'CodePipeline': 'aws-codepipeline.png',
   'Amazon EC2': 'aws-ec2.png',
+  'EC2': 'aws-ec2.png',
   'Amazon ECS': 'aws-ecs.png',
   'ECS': 'aws-ecs.png',
   'Amazon EKS': 'aws-eks.png',
@@ -58,6 +60,9 @@ const ICONS = {
   'ELK': 'elastic-stack.svg',
   'FortiGate': 'fortinet.svg',
   'iptables': 'iptables.png',
+  'nftables': 'iptables.png',
+  'fail2ban': 'fail2ban.png',
+  'Ubuntu': 'ubuntu.svg',
   'UFW': 'ubuntu.svg',
   'VMware': 'vmware.svg',
 
@@ -107,6 +112,9 @@ const ICONS = {
   'Vercel': 'vercel.svg',
   'Vite': 'vite.svg',
   'Supabase': 'supabase.svg',
+  'Nginx': 'nginx.svg',
+  'Flask': 'flask.svg',
+  'Molecule': 'molecule.png',
   'Python': 'python.svg',
   'Django': 'django.svg',
   'Apache PDFBox': 'apache-pdfbox.svg',
