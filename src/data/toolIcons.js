@@ -5,6 +5,7 @@
 //   - pictogrammes Lucide (préfixe « concept- ») pour les notions sans logo de marque.
 // UFW n'ayant pas de logo propre, il utilise celui d'Ubuntu (UFW est le pare-feu d'Ubuntu).
 // Apache PDFBox utilise le logo de la fondation Apache, YOLOv5 celui d'Ultralytics (son éditeur).
+// TFLint n'a pas de logo officiel : il est représenté par un pictogramme de liste de contrôles.
 const BASE = '/icons/tools/'
 
 const ICONS = {
@@ -47,6 +48,10 @@ const ICONS = {
   'AWS CloudWatch': 'aws-cloudwatch.png',
   'CloudWatch': 'aws-cloudwatch.png',
   'AWS Secrets Manager': 'aws-secrets-manager.png',
+  'KMS': 'aws-kms.png',
+  'DynamoDB': 'aws-dynamodb.png',
+  'ALB': 'aws-elb.png',
+  'SNS': 'aws-sns.png',
 
   // SOC / réseau / virtualisation
   'Wazuh': 'wazuh.png',
@@ -65,6 +70,7 @@ const ICONS = {
 
   // Sécurité IaC / images / secrets
   'Checkov': 'checkov.png',
+  'TFLint': 'concept-lint.svg',
   'KICS': 'kics.svg',
   'tfsec': 'tfsec.png',
   'Dockle': 'dockle.png',

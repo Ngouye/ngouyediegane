@@ -7,6 +7,13 @@ import { useReveal } from '../hooks/useReveal'
 import { formatMonth } from '../utils/date'
 import './Projects.css'
 
+// « mars 2025 — juin 2025 », un seul mois s'il ne change pas, « En cours » sans date de fin
+function formatPeriod(start, end) {
+  if (!end) return `${formatMonth(start)} — En cours`
+  const [from, to] = [formatMonth(start), formatMonth(end)]
+  return from === to ? from : `${from} — ${to}`
+}
+
 export default function Projects({ projects }) {
   const [filter, setFilter] = useState('Tous')
   const [selected, setSelected] = useState(null)
@@ -85,7 +92,7 @@ export default function Projects({ projects }) {
                 <span className="eyebrow">{selected.category}</span>
                 {selected.startDate && (
                   <span className="project-card__date">
-                    {formatMonth(selected.startDate)} — {selected.endDate ? formatMonth(selected.endDate) : 'En cours'}
+                    {formatPeriod(selected.startDate, selected.endDate)}
                   </span>
                 )}
               </div>

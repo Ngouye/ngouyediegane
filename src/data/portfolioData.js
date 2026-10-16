@@ -164,15 +164,15 @@ export const projects = [
   {
     id: 2,
     title: "Infrastructure as Code — Terraform AWS",
-    description: "Provisioning multi-environnements (dev/staging/prod) avec Terraform.",
-    longDescription: "Modules Terraform réutilisables pour provisionner VPC, ECS Fargate, RDS PostgreSQL, ALB, IAM roles et S3. State remote sur S3 avec locking DynamoDB. Politiques de sécurité intégrées : encryption at rest, least privilege IAM, Security Groups restrictifs et CloudWatch alerting.",
-    imageUrl: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600",
-    githubUrl: "https://github.com/ngouyegning/terraform-aws-infra",
+    description: "10 modules Terraform pour une plateforme AWS de production, sécurisée par défaut et testée en CI.",
+    longDescription: "Modules Terraform réutilisables qui provisionnent une plateforme applicative complète sur AWS : VPC 3 tiers multi-AZ, ALB en TLS 1.3, ECS Fargate avec auto scaling et rollback automatique, RDS PostgreSQL 17 chiffré, IAM, S3 et ECR. Le state est stocké sur S3 avec verrouillage DynamoDB, et les environnements dev et prod sont séparés (HTTPS obligatoire en prod). Sécurité par défaut : chiffrement KMS partout, IAM au moindre privilège, Security Groups chaînés, base sans route Internet et aucun secret dans le code ni dans le state. Observabilité avec 11 alarmes CloudWatch, un dashboard et des notifications SNS. Qualité vérifiée en CI GitHub Actions via OIDC : 15 tests terraform test, TFLint et Checkov (326 contrôles, 0 échec).",
+    imageUrl: "/projects/terraform-aws.jpg",
+    githubUrl: "https://github.com/Ngouye/Terraformproject",
     category: "Cloud",
     featured: true,
-    startDate: "2024-08-01",
-    endDate: "2025-03-01",
-    technologies: ["Terraform", "AWS", "ECS", "RDS", "VPC", "IAM"]
+    startDate: "2026-10-01",
+    endDate: "2026-10-14",
+    technologies: ["Terraform", "AWS", "ECS", "RDS", "VPC", "IAM", "KMS", "DynamoDB", "CloudWatch", "Checkov", "TFLint", "GitHub Actions"]
   },
   {
     id: 3,
