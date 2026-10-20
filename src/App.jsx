@@ -9,6 +9,7 @@ import {
   workflow,
   skillGroups,
   resumes,
+  research,
 } from './data/portfolioData'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -16,6 +17,7 @@ import About from './components/About'
 import Expertise from './components/Expertise'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
+import Research from './components/Research'
 import Journey from './components/Journey'
 import Certifications from './components/Certifications'
 import Resumes from './components/Resumes'
@@ -26,11 +28,13 @@ import { useSpotlight } from './hooks/useSpotlight'
 export default function App() {
   useSpotlight()
 
+  const toolCount = skills.filter((s) => s.category !== 'Mathématiques & cryptographie').length
+
   // Signaux de confiance affichés sous les boutons de l'accueil
   const stats = [
     { value: `${cybersecurityCertifications.length}`, label: 'Certifications', hint: 'Microsoft · Harvard · ANSSI' },
     { value: `${projects.length}`, label: 'Projets réalisés', hint: 'DevSecOps · Cloud · SOC' },
-    { value: `${Math.floor(skills.length / 10) * 10}+`, label: 'Outils maîtrisés', hint: 'SAST · DAST · IaC · AWS' },
+    { value: `${Math.floor(toolCount / 10) * 10}+`, label: 'Outils maîtrisés', hint: 'SAST · DAST · IaC · AWS' },
   ]
 
   return (
@@ -43,6 +47,7 @@ export default function App() {
         <Expertise items={expertise} />
         <Skills skills={skills} groups={skillGroups} />
         <Projects projects={projects} />
+        <Research research={research} />
         <Journey experiences={experiences} educations={educations} />
         <Certifications certifications={cybersecurityCertifications} />
         <Resumes resumes={resumes} />

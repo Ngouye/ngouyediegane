@@ -36,7 +36,7 @@ export default function Hero({ profile, stats, features }) {
       <div className="container hero__inner">
         <div className="hero__content">
           <p className="eyebrow hero-in" style={{ '--d': 0 }}>
-            Analyste SOC &amp; DevSecOps · {profile.location}
+            Analyste SOC &amp; DevSecOps · Mathématicien · {profile.location}
           </p>
 
           <h1 className="hero__title serif">
