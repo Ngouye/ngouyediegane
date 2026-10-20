@@ -11,6 +11,7 @@ import {
   resumes,
   research,
 } from './data/portfolioData'
+import { cryptoFamilies } from './data/cryptosystems'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -18,15 +19,26 @@ import Expertise from './components/Expertise'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Research from './components/Research'
+import Cryptosystems from './components/Cryptosystems'
 import Journey from './components/Journey'
 import Certifications from './components/Certifications'
 import Resumes from './components/Resumes'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import { useEffect } from 'react'
 import { useSpotlight } from './hooks/useSpotlight'
 
 export default function App() {
   useSpotlight()
+
+  // Précharge les sections mathématiques (KaTeX) une fois la page affichée
+  useEffect(() => {
+    const id = setTimeout(() => {
+      import('./components/research/ResearchBody')
+      import('./components/research/CryptoBody')
+    }, 1200)
+    return () => clearTimeout(id)
+  }, [])
 
   const toolCount = skills.filter((s) => s.category !== 'Mathématiques & cryptographie').length
 
@@ -48,6 +60,7 @@ export default function App() {
         <Skills skills={skills} groups={skillGroups} />
         <Projects projects={projects} />
         <Research research={research} />
+        <Cryptosystems families={cryptoFamilies} />
         <Journey experiences={experiences} educations={educations} />
         <Certifications certifications={cybersecurityCertifications} />
         <Resumes resumes={resumes} />

@@ -40,8 +40,7 @@
 /* ---------- Mémoire ---------- */
 
 .research__thesis,
-.research__math,
-.research__pillar {
+.research__math {
   border-radius: var(--radius-lg);
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -138,64 +137,6 @@
   color: #8fb0ff;
 }
 
-.math {
-  font-family: 'STIX Two Text', 'Cambria Math', 'Times New Roman', serif;
-  font-size: 1.2rem;
-  color: #fff;
-  line-height: 1.7;
-}
-
-.math var { font-style: italic; }
-.math sub,
-.math sup { font-size: 0.68em; }
-
-.math--main {
-  padding: 10px 20px;
-  line-height: 2.4;
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.06);
-  border-left: 3px solid #8fb0ff;
-  font-size: 1.55rem;
-}
-
-.math--result { font-size: 1.1rem; }
-.math--result strong { color: #8fb0ff; font-weight: 600; }
-
-/* Σ avec ses bornes au-dessus et en dessous */
-.math__sum {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  vertical-align: middle;
-  line-height: 1;
-  font-size: 0.55em;
-  margin: 0 2px;
-}
-
-.math__sum-sign {
-  font-size: 2.3em;
-  line-height: 0.95;
-  margin: 1px 0;
-}
-
-/* base^{sup}_{sub} : exposant et indice empilés à droite de la base */
-.math__scripted {
-  display: inline-flex;
-  align-items: center;
-  vertical-align: middle;
-}
-
-.math__scripts {
-  display: inline-flex;
-  flex-direction: column;
-  margin-left: 1px;
-  font-size: 0.62em;
-  line-height: 1.15;
-}
-
-.math__scripts sub,
-.math__scripts sup { font-size: 0.8em; }
-
 .research__math-note {
   font-size: 0.85rem;
   color: #b4c2df;
@@ -280,104 +221,135 @@
 
 .metrics tbody th { color: #fff; font-weight: 600; }
 .metrics tbody td { color: #dbe6ff; }
-.metrics td.math { font-size: 0.98rem; line-height: 1.3; white-space: nowrap; }
+.metrics td { white-space: nowrap; }
+.metrics td:last-child { white-space: normal; }
 .metrics tbody tr + tr { border-top: 1px dashed rgba(255, 255, 255, 0.1); }
 .metrics tr.is-current { background: rgba(91, 140, 255, 0.16); }
 .metrics tr.is-current th { color: #8fb0ff; }
 
-/* ---------- Trois piliers ---------- */
+/* ---------- Encadré : KaTeX ---------- */
 
-.research__pillars {
-  margin-top: 24px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+.research__math .tex--block {
+  padding: 4px 16px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.06);
+  border-left: 3px solid #8fb0ff;
 }
 
-.research__pillar {
-  padding: 28px;
-  transition: border-color 0.3s ease, transform 0.4s var(--ease-out), background 0.3s ease;
+.research__math .tex--block + .sumrank,
+.sumrank + .tex--block { margin-top: 2px; }
+
+.sumrank__label .tex .katex { font-size: 0.95em; }
+
+.metrics .tex .katex { font-size: 1em; }
+
+.math-loading {
+  min-height: 900px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.03);
 }
 
-.research__pillar:hover {
-  transform: translateY(-4px);
-  border-color: rgba(143, 176, 255, 0.45);
-  background: rgba(255, 255, 255, 0.07);
+/* ---------- Cadre mathématique (style article) ---------- */
+
+.research__theory-head {
+  margin: 72px 0 24px;
+  max-width: 760px;
 }
 
-.research__pillar-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: rgba(143, 176, 255, 0.15);
-  color: #8fb0ff;
-}
-
-.research__pillar h4 {
-  margin-top: 16px;
+.research__theory-head h3 {
   color: #fff;
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: clamp(1.6rem, 2.4vw, 2rem);
 }
 
-.research__pillar p {
-  margin-top: 8px;
-  font-size: 0.92rem;
-  line-height: 1.7;
+.research__theory-head p { margin-top: 8px; }
+
+.theory {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
 }
 
-/* Échange prouveur (P) / vérifieur (V) */
-.zk-steps {
-  margin-top: 16px;
+.thm {
+  position: relative;
+  min-width: 0;
+  padding: 24px 26px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 3px solid var(--thm-color);
+  color: #c9d5ee;
+  line-height: 1.75;
+  --thm-color: #8fb0ff;
+}
+
+.thm--wide { grid-column: 1 / -1; }
+
+.thm--def   { --thm-color: #8fb0ff; }
+.thm--thm   { --thm-color: #34d399; }
+.thm--pb    { --thm-color: #fbbf24; }
+.thm--proto { --thm-color: #c084fc; }
+.thm--rem   { --thm-color: #94a3b8; }
+
+.thm__head {
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.thm__kind {
+  font-weight: 700;
+  color: var(--thm-color);
+}
+
+.thm__name { font-style: italic; }
+
+/* Comme en LaTeX : l'énoncé d'un résultat est en italique */
+.thm--thm .thm__body > p:not(.thm__proof),
+.thm--thm .thm__list { font-style: italic; }
+
+.thm__body > * + * { margin-top: 6px; }
+
+.thm__body strong { color: #fff; font-style: normal; }
+
+.thm__list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
+  padding-left: 18px;
+  list-style: disc;
 }
 
-.zk-steps li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #8fb0ff;
+.thm__proof {
+  margin-top: 12px !important;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.14);
+  font-size: 0.92rem;
 }
 
-.zk-steps__party {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: 1px solid rgba(143, 176, 255, 0.5);
-  color: #fff;
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 0.85rem;
+.thm__proof em { color: #fff; }
+
+.qed {
+  float: right;
+  color: var(--thm-color);
 }
 
-.zk-steps__name {
-  margin-left: 4px;
-  color: #dbe6ff;
-  font-size: 0.88rem;
-  font-weight: 500;
-}
+.thm .tex--block .katex-display { margin: 0.5em 0; }
+.thm--proto .tex--block { margin: 10px 0; }
 
 /* ---------- Responsive ---------- */
 
 @media (max-width: 960px) {
-  .research__grid { grid-template-columns: 1fr; }
-  .research__pillars { grid-template-columns: 1fr; }
+  .research__grid { grid-template-columns: minmax(0, 1fr); }
+  .theory { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (max-width: 600px) {
   .research::before { font-size: 320px; right: -60px; }
   .research__thesis,
   .research__math { padding: 22px; }
-  .research__pillar { padding: 22px; }
-  .math--main { font-size: 1.2rem; }
+  .thm { padding: 20px 18px; }
+  .thm .tex--block .katex { font-size: 0.95em; }
+  .research__theory-head { margin-top: 56px; }
   .sumrank { gap: 6px; }
   .sumrank__label { font-size: 0.72rem; }
 }

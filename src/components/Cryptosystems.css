@@ -1,0 +1,134 @@
+.crypto__tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 5px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.crypto__tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 42px;
+  padding: 0 16px;
+  border-radius: var(--radius-sm);
+  color: var(--text-2);
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: color var(--transition), background var(--transition), transform 0.2s ease;
+}
+
+.crypto__tab:hover { color: var(--navy); }
+.crypto__tab:active { transform: scale(0.97); }
+
+.crypto__tab--active {
+  color: #fff;
+  font-weight: 600;
+  background: var(--navy);
+}
+
+.crypto__tab--active:hover { color: #fff; }
+
+.crypto__tab-count {
+  min-width: 24px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: var(--border);
+  color: var(--text-2);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.crypto__tab--active .crypto__tab-count {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.crypto__intro {
+  margin: 20px 0 24px;
+  color: var(--text-2);
+}
+
+.crypto__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+.crypto__grid > * {
+  animation: rise 0.6s var(--ease-out) backwards;
+  animation-delay: calc(var(--i, 0) * 80ms);
+}
+
+.crypto-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.crypto-card__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 14px;
+}
+
+.crypto-card__head h3 {
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+.crypto-card__tag {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* Bloc de formules, façon encadré de cours */
+.crypto-card__formulas {
+  padding: 4px 16px;
+  border-radius: var(--radius);
+  background: var(--bg-soft);
+  border-left: 3px solid var(--accent);
+  color: var(--navy);
+}
+
+.crypto-card__formulas .katex-display { margin: 0.55em 0; }
+.crypto-card__formulas .katex { font-size: 1.02em; }
+
+.crypto-card__note {
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.crypto-loading {
+  min-height: 640px;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 960px) {
+  .crypto__grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .crypto__tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .crypto__tabs::-webkit-scrollbar { display: none; }
+  .crypto__tab { flex-shrink: 0; }
+  .crypto-card__formulas { padding: 2px 10px; }
+  .crypto-card__formulas .katex { font-size: 0.92em; }
+}

@@ -1,0 +1,13 @@
+.tex .katex { font-size: 1.08em; }
+
+/* Formule centrée sur sa propre ligne ; défile horizontalement si elle dépasse sur mobile */
+.tex--block {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 2px 0;
+}
+
+.tex--block .katex-display { margin: 0.6em 0; }

@@ -436,10 +436,12 @@ export const skills = [
 
   // Mathématiques (non comptées dans les « outils maîtrisés » de l'accueil)
   { id: 59, name: "Théorie des codes correcteurs", category: "Mathématiques & cryptographie", description: "Codes en métriques de Hamming, rang et sum-rank" },
-  { id: 60, name: "Cryptographie post-quantique", category: "Mathématiques & cryptographie", description: "Cryptographie fondée sur les codes correcteurs" },
+  { id: 60, name: "Cryptographie post-quantique", category: "Mathématiques & cryptographie", description: "Codes (McEliece, HQC), réseaux (ML-KEM, ML-DSA), hachage (SLH-DSA)" },
   { id: 61, name: "Preuves zero-knowledge", category: "Mathématiques & cryptographie", description: "Protocoles d'identification, transformée de Fiat–Shamir" },
   { id: 62, name: "Algèbre & corps finis", category: "Mathématiques & cryptographie", description: "Corps finis 𝔽q et leurs extensions, algèbre linéaire" },
-  { id: 63, name: "Cryptographie classique", category: "Mathématiques & cryptographie", description: "Chiffrement symétrique et asymétrique (AES, RSA), hachage (SHA-256)" }
+  { id: 63, name: "Cryptographie à clé publique", category: "Mathématiques & cryptographie", description: "RSA, Diffie–Hellman, ElGamal, courbes elliptiques (ECDSA, Ed25519), Schnorr" },
+  { id: 64, name: "Cryptographie symétrique", category: "Mathématiques & cryptographie", description: "AES, AES-GCM, SHA-2, SHA-3, HMAC, sécurité parfaite de Shannon" },
+  { id: 65, name: "Protocoles cryptographiques", category: "Mathématiques & cryptographie", description: "Engagements, partage de secret de Shamir, identification de Schnorr et de Stern" }
 ];
 
 // Mémoire de Master 2 (section « Recherche »)
@@ -451,25 +453,7 @@ export const research = {
   institution: "Université Cheikh Anta Diop de Dakar",
   program: "Master 2 Transmission des données et sécurité de l'information",
   summary: "Le mémoire porte sur des protocoles d'identification à divulgation nulle de connaissance dont la sécurité repose sur un problème de théorie des codes : le décodage par syndrome en métrique sum-rank. Cette métrique généralise à la fois la métrique de Hamming et la métrique rang, et ouvre la voie à des schémas cryptographiques résistants aux ordinateurs quantiques.",
-  keywords: ["Cryptographie post-quantique", "Théorie des codes", "Métrique sum-rank", "Métrique rang", "Divulgation nulle de connaissance", "Protocole de Stern", "Transformée de Fiat–Shamir", "Corps finis"],
-  pillars: [
-    {
-      icon: "hard",
-      title: "Le problème difficile",
-      text: "Retrouver un vecteur e de petit poids sum-rank tel que H·eᵀ = s, connaissant seulement H et s. On ne connaît pas d'algorithme efficace pour ce problème, ni classique ni quantique : il sert de fondement à la sécurité."
-    },
-    {
-      icon: "zk",
-      title: "Le protocole zero-knowledge",
-      text: "Le prouveur convainc le vérifieur qu'il connaît le secret e sans rien en révéler, par un échange en trois passes répété sur plusieurs tours, dans l'esprit du protocole de Stern.",
-      steps: ["Engagement", "Défi", "Réponse"]
-    },
-    {
-      icon: "pq",
-      title: "L'enjeu post-quantique",
-      text: "L'algorithme de Shor casserait RSA et les courbes elliptiques sur un ordinateur quantique. Les schémas fondés sur les codes en sont une alternative, et la transformée de Fiat–Shamir convertit un schéma d'identification en signature numérique."
-    }
-  ]
+  keywords: ["Cryptographie post-quantique", "Théorie des codes", "Métrique sum-rank", "Codes MSRD", "Reed–Solomon linéarisés", "Décodage par syndrome", "Divulgation nulle de connaissance", "Protocole de Stern", "Transformée de Fiat–Shamir", "Corps finis"]
 };
 
 export const cybersecurityCertifications = [
